@@ -1,0 +1,2 @@
+GIT:
+use files/folders in format ..[file-name] (starting with .. ) to exclude it BOTH from GIT and METEOR (defined in .gitignore).

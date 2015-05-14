@@ -1,0 +1,13 @@
+# ignore files with extentions:
+~$*.xlsx
+~$*.docx
+~*.tmp
+
+
+# ignore these folders:
+
+#builds/
+..*
+.idea
+
+
