@@ -1,0 +1,4 @@
+
+Visual Editing Tool for Meteor for MongoDB Collections
+http://mongol.meteor.com
+https://github.com/msavin/Mongol

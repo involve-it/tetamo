@@ -1,3 +1,4 @@
 git:
-
-https://github.com/involve-it/tetamo
+https://github.com/involve-it/tetamo.git
+involve-it
+InvolveMe13

@@ -1,2 +1,7 @@
 http://stackoverflow.com/questions/22181413/how-to-make-react-and-meteor-fit-together
 https://www.meteor.com/blog/2014/02/14/pete-hunt-talks-facebook-react
+
+
+// react template problem:
+http://facebook.github.io/react/html-jsx.html
+https://news.ycombinator.com/item?id=7696526
