@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Tetamo Contacts</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"/>
+    <!--<link rel="stylesheet" href="../css/style.css"/>-->
+    <link rel="stylesheet" href="contacts.css"/>
+</head>
+<body>
+
+<div class="container">
+    <div id="content-container">
+        <div class="page contacts">
+            <div class="top-bar nav-bar-block nav-bar-color">
+                <div class="inner-content">
+                    <div class="nav-group left">
+                        <div id="menu">
+                            <a role="button" href="#" class="btn btn-navbar-toggle"></a>
+                        </div>
+                    </div>
+
+                    <h1 class="title">Contacts</h1>
+
+                    <div class="nav-group right">
+                       <form role="search" method="post" action="#" class="search" id="search">
+                         <input type="search" placeholder="search..." name="searchword" class="search-field" autocomplete="off">
+                       </form>
+                    </div>
+                </div>
+            </div>
+            <div class="contacts-list">
+                <div class="scroll-content">
+                    <div class="overflow-scroll">
+                        <!--Hidden if don't contacts -->
+                        <div class="wrapper-message">
+                            <div class="title-message">No contacts here</div>
+                            <div class="subtitle-message">Add new contact using main menu</div>
+                        </div>
+                        <!-- end -->
+                        <div class="new-message">
+
+                            <h2 class="title"><i class="icon-new-message"></i> New message</h2>
+                        </div>
+
+                        <div class="item">
+                            <div class="avatar">
+                                <img src="http://api.randomuser.me/portraits/thumb/women/39.jpg" title="" alt=""/>
+                            </div>
+
+                            <div class="item-content">
+                                <div class="inner">
+                                    <div class="user-emo">Anger</div>
+                                    <span class="time-stamp">22:30</span>
+                                    <div class="user-name-label">Nancy Alvarado</div>
+                                    <div class="user-status online">online</div>
+                                    <p class="user-last-message">Hi! What did you do??</p>
+                                </div>
+                            </div>
+                            <div class="line-context-emotions"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="avatar">
+                                <img src="http://api.randomuser.me/portraits/thumb/men/30.jpg" title="" alt=""/>
+                            </div>
+
+                            <div class="item-content">
+                                <div class="inner">
+                                    <div class="user-emo">Happiness</div>
+                                    <span class="time-stamp">15:10</span>
+                                    <div class="user-name-label">Steven Jacobs</div>
+                                    <div class="user-status offline">offline</div>
+                                    <p class="user-last-message">WOW!!! I'm so happy, what ...</p>
+                                </div>
+                            </div>
+                            <div class="line-context-emotions one"></div>
+                        </div>
+
+                        <div class="item">
+                            <div class="avatar">
+                                <img src="http://api.randomuser.me/portraits/thumb/women/8.jpg" title="" alt=""/>
+                            </div>
+
+                            <div class="item-content">
+                                <div class="inner">
+                                    <div class="user-emo">Sadness</div>
+                                    <span class="time-stamp">Jan/05/15</span>
+                                    <div class="user-name-label">Christina Gordon</div>
+                                    <div class="user-status online">online</div>
+                                    <p class="user-last-message">Baby. I miss you, come to ...</p>
+                                </div>
+                            </div>
+                            <div class="line-context-emotions two"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</html>

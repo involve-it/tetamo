@@ -1,0 +1,401 @@
+* {
+    margin: 0;
+}
+
+html {
+    min-height: 100%;
+    position: relative;
+}
+
+body {
+    font-size: 14px;
+    width:100%;
+}
+
+
+.page.contacts {}
+
+.top-bar {
+    display:-webkit-box;
+    display:-webkit-flex;
+    display:-moz-box;
+    display:-moz-flex;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-transform:translate3d(0, 0, 0);
+    transform:translate3d(0, 0, 0);
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    position:absolute;
+    right:0;
+    left:0;
+    z-index:9;
+    box-sizing:border-box;
+    padding:5px;
+    width:100%;
+    height:44px;
+    background-color:white;
+    background-size:0;
+}
+
+.nav-bar-color {
+    border-bottom: 1px solid #DCDDDF;
+    background-color:#F6F8F9;
+    color:#59636B
+}
+
+.nav-bar-block {
+    left: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    z-index: 2;
+
+}
+
+.top-bar {
+    height: 43px;
+    line-height: 44px;
+    min-width: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.top-bar .title {
+    font-size: 17px;
+    font-weight: 500;
+    height: 43px;
+    line-height: 44px;
+    min-width: 30px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    margin: 0 8pt;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    text-transform: uppercase;
+    top: 0;
+    white-space: nowrap;
+    z-index: 0;
+}
+
+.top-bar .nav-group.right {
+    left: auto;
+    right: 8pt;
+}
+
+.top-bar .nav-group.left {
+    left: 8pt;
+    right: auto;
+}
+
+.top-bar .nav-group {
+    bottom: auto;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: auto;
+    top: 0;
+    width: auto;
+    z-index: 1;
+}
+
+.btn.active,
+.btn:active {
+    background-image: url(images/Menu.png);
+    box-shadow: none;
+}
+
+.top-bar .nav-group #search a,
+.top-bar .nav-group #menu a {
+    outline: none !important;
+    height: 29px;
+    width: 29px;
+}
+
+#menu .btn-navbar-toggle {
+    background-image: url(images/Menu.png);
+    background-repeat: no-repeat;
+    background-position: center -2px;
+    background-size: cover;
+}
+
+.top-bar .nav-group #menu {}
+
+
+/*
+*
+* Search
+*
+*/
+
+.search::before {
+    content: "";
+    background-image: url(images/Search.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    left: 10px;
+    position: absolute;
+    text-align: center;
+    top: 9px;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+}
+
+.search {
+    display: inline-block;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.search-field:focus,
+.search.active .search-field {
+    width: 170px;
+}
+
+input.search-field {
+    -webkit-appearance: none;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 16px;
+    line-height: normal;
+    width: 44px;
+    height: 44px;
+    padding: 0 0 0 44px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+    color: #222222;
+    -webkit-transition: all linear 0.2s;
+    transition: all linear 0.2s;
+    position: relative;
+    z-index: 3;
+    text-indent: 0px;
+    cursor: pointer;
+}
+input.search-field:focus {
+    border: 1px solid rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    outline: 0;
+    cursor: text;
+}
+
+
+/*
+#
+# Contact List
+#
+*/
+
+.contacts-list {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.scroll-content {
+    bottom: 0;
+    height: auto;
+    left: 0;
+    margin-top: -1px;
+    overflow: hidden;
+    padding-top: 1px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+}
+
+.new-message {
+    height: 49px;
+    background-color: #F2FAFE;
+    background-image:-webkit-linear-gradient(right, #F2FAFE, #E2EFF5 100%);
+    background-image:-moz-linear-gradient(right, #F2FAFE, #E2EFF5 100%);
+    background-image:-o-linear-gradient(right, #F2FAFE, #E2EFF5 100%);
+    background-image:linear-gradient(to right, #F2FAFE, #E2EFF5 100%);
+
+}
+
+.icon-new-message {} /* icon for label New message */
+
+.new-message h2 {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+    line-height: 49px;
+    color: #59636B;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 300;
+}
+
+.item {
+    position: relative;
+    overflow: hidden;
+    height: 100px;
+    /* background-color: #DFE3E5; */
+    /* border-bottom: 1px solid #979797; */
+}
+
+.item:last-child {
+    border-bottom: none;
+}
+
+.avatar,
+.avatar > img {
+    height: 100px;
+    width: 100px;
+    background: #cccccc;
+    position: absolute;
+    left: 0;
+}
+
+.item-content {
+    position: relative;
+    padding-left: 100px;
+    width: 100%;
+    height: 100%;
+}
+
+.item-content .inner {
+    padding: 0 15pt;
+}
+
+.user-emo {
+    font-size: 13px;
+    position: absolute;
+    left: 100px;
+    top: 8pt;
+    margin-left: 15pt;
+    text-transform: uppercase;
+    color: #ADABB0;
+}
+
+.time-stamp {
+    font-size: 13px;
+    color: #ADABB0; /* text color #ADABB0 */
+    position: absolute;
+    top: 8pt;
+    right: 15pt;
+}
+
+.user-name-label {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: #59636B; /* text color by user name #59636B */
+    padding-top: 30px;
+
+
+}
+
+.user-last-message {
+    font-size: 16px;
+    color: #88858C; /* text color message #88858C */
+    font-family: "Helvetica Neue Light", "Lucida Grande", "Calibri", "Arial", sans-serif;
+    padding: 0;
+}
+
+.user-status {
+    position: absolute;
+    right: 15pt;
+    top: 35px;
+    font-size: 12px;
+}
+
+.user-status.online {
+    color: #34E808;
+}
+
+.user-status.offline {
+    color: #9B9B9B;
+}
+
+.line-context-emotions {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    background-color: #3023AE;
+    background-image:-webkit-linear-gradient(right, #3023AE, #D753FD 45%, #E90F56 75%, #A4FF02 100%);
+    background-image:-moz-linear-gradient(right, #3023AE, #D753FD 45%, #E90F56 75%, #A4FF02 100%);
+    background-image:-o-linear-gradient(right, #3023AE, #D753FD 45%, #E90F56 75%, #A4FF02 100%);
+    background-image:linear-gradient(to right, #3023AE, #D753FD 45%, #E90F56 75%, #A4FF02 100%);
+}
+
+.line-context-emotions.one {
+    background-color: #A4FF02;
+    background-image:-webkit-linear-gradient(right, #A4FF02, #E90F56 45%, #D753FD 75%, #3023AE 100%);
+    background-image:-moz-linear-gradient(right, #A4FF02, #E90F56 45%, #D753FD 75%, #3023AE 100%);
+    background-image:-o-linear-gradient(right, #A4FF02, #E90F56 45%, #D753FD 75%, #3023AE 100%);
+    background-image:linear-gradient(to right, #A4FF02, #E90F56 45%, #D753FD 75%, #3023AE 100%);
+}
+
+.line-context-emotions.two {
+    background-color: #3023AE;
+    background-image:-webkit-linear-gradient(right, #3023AE, #E90F56 75%, #A4FF02 100%);
+    background-image:-moz-linear-gradient(right, #3023AE, #E90F56 75%, #A4FF02 100%);
+    background-image:-o-linear-gradient(right, #3023AE, #E90F56 75%, #A4FF02 100%);
+    background-image:linear-gradient(to right, #3023AE, #E90F56 75%, #A4FF02 100%);
+}
+
+.overflow-scroll {
+    bottom: 0;
+    left: 0;
+    overflow-x: hidden;
+    /*overflow-y: scroll;*/
+    position: absolute;
+    right: 0;
+    top: 44px;
+}
+
+.wrapper-message {
+    display: none; /*If don't contacts*/
+
+    bottom: auto;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 45%;
+    -webkit-transform:translate3d(0, -50%, 0);
+       -moz-transform:translate3d(0, -50%, 0);
+        -ms-transform:translate3d(0, -50%, 0);
+         -o-transform:translate3d(0, -50%, 0);
+            transform:translate3d(0, -50%, 0);
+    width: auto;
+}
+
+.wrapper-message .title-message {
+    color: #59636B;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 28px;
+    margin-bottom: 0.5em;
+}
+
+.wrapper-message .subtitle-message {
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+
+
+
+
+
