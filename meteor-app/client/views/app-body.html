@@ -1,6 +1,7 @@
 <template name="appBody">
-  <div id="container" class="">
-    <div id="content-container">
+  <div id="main-container" class="container">
+    {{> sideMenu }}
+    <div id="content-wrapper">
       {{#each thisArray}}
         {{> yield}}
       {{/each}}

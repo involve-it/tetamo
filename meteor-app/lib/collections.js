@@ -15,3 +15,9 @@ Lists.defaultName = function() {
 
 Todos = new Mongo.Collection('todos');
 */
+// SPEECH:
+Lists = new Mongo.Collection('contacts');
+Lists = new Mongo.Collection('dialogs');
+
+// EMOTIONS (TODO):
+//Lists = new Mongo.Collection('');
