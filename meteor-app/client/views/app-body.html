@@ -1,10 +1,14 @@
 <template name="appBody">
-  <div id="main-container" class="container">
+  <div id="main-container">
     {{> sideMenu }}
     <div id="content-wrapper">
-      {{#each thisArray}}
-        {{> yield}}
-      {{/each}}
+        <div class="content">
+            <div class="content-header container">
+              {{#each thisArray}}
+                {{> yield}}
+              {{/each}}
+            </div>
+        </div>
     </div>
   </div>
 </template>
