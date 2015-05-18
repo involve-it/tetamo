@@ -1,0 +1,5 @@
+// collaboration:
+https://www.dropbox.com/sh/hn3ohv85c3am9q2/AAA-MMf5yzoiTgxI0jcz0w-Ba?dl=0
+Эта папка (tetamo) используется как хранилище файлов проекта tetamo.
+Для документации используем https://tetamo.hackpad.com.
+В Хакпаде можно вставить ссылку на файл из Дропбокса (upper menu -> insert -> dropbox file).

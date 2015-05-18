@@ -2,3 +2,6 @@
 Visual Editing Tool for Meteor for MongoDB Collections
 http://mongol.meteor.com
 https://github.com/msavin/Mongol
+
+// meteor client with other server tech stacks:
+http://chafey.blogspot.com/2015/03/integrating-meteor-client-only.html

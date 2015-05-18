@@ -1,1 +1,6 @@
 meteor add msavin:mongol
+
+
+-----------------
+see:
+http://asteroides.meteor.com/
