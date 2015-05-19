@@ -1,0 +1,60 @@
+Connect to Teradata from nodejs:
+package: https://www.npmjs.com/package/odbc
+
+Connection string for Teradata:
+https://www.connectionstrings.com/teradata/
+
+Linux driver:
+https://downloads.teradata.com/download/connectivity/odbc-driver/linux
+
+Mac driver:
+http://downloads.teradata.com/download/connectivity/teradata-odbc-driver-for-mac-os-x
+
+REST API for Teradata: Loom
+http://assets.teradata.com/resourceCenter/downloads/Datasheets/EB8444.pdf?processed=1
+
+REST on JDBC:
+https://github.com/Eldelshell/jongo
+
+BB+Socket.io = CRUD on client side:
+http://developer.teradata.com/blog/jasonstrimpel/2011/11/backbone-js-and-socket-io
+
+__________________________________________________________________________________________
+Unix commands:
+ Mention the procedure via which, we can run Teradata jobs in a UNIX environment.
+
+All you have to do is perform execution in UNIX in the way as mentioned below.
+
+$Sh > BTEQ < [Script Path] > [Logfile Path]
+or
+$Sh > BTEQ < [Script Path] TEE [Logfile Path]
+
+
+__________________________________________________________________________________________
+System Properties Comparison Cassandra vs. MongoDB vs. Teradata
+http://db-engines.com/en/system/Cassandra%3BMongoDB%3BTeradata
+
+
+// backups and history:
+https://github.com/ulpian/bson2csv
+(or https://www.npmjs.com/package/bson-stream)
+
+If we periodically backup mongodb, then we can anytime use bson2csv to convert bson files to csv and
+thus show admin history of changes of any value in db (e.g. Product DPPM). This way we don't have to programmatically
+(i.e. in our web application) keep track of data changes.
+
+100 error:
+http://stackoverflow.com/a/15752736/1820510
+
+to backup mongo db:
+run
+ mongodump -h localhost --port 3001 [or other]
+
+ restore
+ mongorestore -h localhost --port 81 /Users/aarutunyan/Documents/meteor/backup/meteor --drop
+ // same for specific collection:
+mongorestore -h localhost --port 3001 /projects/EMOTIONS/tetamo/meteor-app/..dump/meteor/users  --drop --collection users
+
+
+
+ , then see the dump folder for files

@@ -1,3 +1,4 @@
+# path in this file should be root, i.e. start with /meteor-app/
 # ignore files with extentions:
 ~$*.xlsx
 ~$*.docx
@@ -8,6 +9,7 @@
 
 #builds/
 ..*
+meteor-app/.idea
 .idea
 
 

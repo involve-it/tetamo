@@ -17,3 +17,7 @@ Meteor.publish('todos', function(listId) {
   return Todos.find({listId: listId});
 });
 */
+
+Meteor.publish('users', function(){
+   return Meteor.users.find();
+});

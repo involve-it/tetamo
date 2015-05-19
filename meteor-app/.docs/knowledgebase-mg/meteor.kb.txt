@@ -1,0 +1,46 @@
+__meteor_bootstrap__
+
+// great info about using js in handlebars:
+https://github.com/raix/Meteor-handlebar-helpers
+
+// mongodb backup:
+http://stackoverflow.com/questions/16816860/meteor-how-can-i-backup-my-mongo-database
+
+// cheat-sheet:
+https://gentlenode.com/journal/meteor-5-complete-cheatsheet/7
+
+KILL METEOR!!!
+$ kill -9 `ps ax | grep node | grep meteor | awk '{print $1}'`  # to kill meteor
+ps -x | grep meteor
+
+// ERRORS:
+    - Unexpected mongo exit code 100. Restarting.
+        there is mongo.lock file
+        cd /Users/aarutunyan/Documents/meteor/mg-2/meteor_app
+        rm .meteor/local/db/mongod.lock
+        OR
+        permissions got changed:
+        sudo chmod -R 777 .meteor
+
+On the server use 'forever' - A simple CLI tool for ensuring that a given script runs continuously (i.e. forever):
+    https://github.com/foreverjs/forever
+    http://ox86.tumblr.com/post/45184656062/running-your-meteor-js-application-on-your-own
+
+Install meteor on stand-alone server (KB):
+    // subdomain Apache:
+    http://ox86.tumblr.com/post/45184656062/running-your-meteor-js-application-on-your-own
+
+    // deploy meteor app to custom server using SSH:
+    https://www.npmjs.com/package/meteor-deploy
+
+    // Rolling your own Meteor js environment
+    http://projectricochet.com/blog/rolling-your-own-meteor-js-environment#.VOvQ1VPF9M0
+
+    // meteor up (not working with Mac OS):
+    https://github.com/arunoda/meteor-up#setting-up-a-server
+
+    //// keep track of current sessions:
+    //https://github.com/mizzao/meteor-user-status
+
+    // use pfafman:watch-file for showing csv files to admin (/csv-reader-udm)
+

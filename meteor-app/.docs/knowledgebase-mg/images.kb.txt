@@ -1,0 +1,4 @@
+image editor:
+http://fabricjs.com/freedrawing/
+
+https://github.com/andyvr/picEdit
