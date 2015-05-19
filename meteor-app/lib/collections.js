@@ -16,8 +16,19 @@ Lists.defaultName = function() {
 Todos = new Mongo.Collection('todos');
 */
 // SPEECH:
-Lists = new Mongo.Collection('contacts');
-Lists = new Mongo.Collection('dialogs');
+//Users = new Mongo.Collection('users');
+//Users.insert({
+//  name:
+//})
+if(Meteor.isClient){
+  Meteor.subscribe('users');
+}
+
+Messages = new Mongo.Collection('messages');
+Emotions = new Mongo.Collection('emotions');
+EmotionalStates = new Mongo.Collection('emotionalStates');
+
+Dialogs = new Mongo.Collection('dialogs');
 
 // EMOTIONS (TODO):
 //Lists = new Mongo.Collection('');

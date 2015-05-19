@@ -1,0 +1,13 @@
+
+
+menu-unfolding-mobile
+https://vimeo.com/61198225
+
+folding with js:
+https://developer.mozilla.org/en-US/demos/detail/paperfold-css
+
+popups:
+http://www.agapastudio.com/products/speedo-popup-jquery-plugin/demo
+
+cool thumbnails:
+http://tympanus.net/Tutorials/3DHoverEffects/index2.html

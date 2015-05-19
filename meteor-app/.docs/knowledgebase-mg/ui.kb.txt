@@ -1,0 +1,14 @@
+STYLE:
+Bootstrap official approach:
+http://getbootstrap.com/customize/?id=b6d3bd987985eb6d1494
+
+Good apprach, meteor -related:
+http://www.manuel-schoebel.com/blog/meteorjs-and-twitter-bootstrap---the-right-way
+
+UI COMPONENTS:
+side-menu:
+http://jasny.github.io/bootstrap/javascript/#offcanvas
+http://code.jonathanbriehl.com/demos/bootstrap-vertical-menu/#
+
+ANIMATIONS:
+https://github.com/weepy/jquery.path

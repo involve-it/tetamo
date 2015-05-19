@@ -1,0 +1,20 @@
+LOAD BALANCER:
+http://blog.search-computing.net/2010/04/load-balancing-with-apache-a-tutorial-on-mod_proxy_balancer-installation-and-configuration/
+https://access.redhat.com/documentation/en-US/Red_Hat_JBoss_Web_Server/1.0/html/HTTP_Connectors_Load_Balancing_Guide/Apache_HTTP_Configure.html
+https://groups.google.com/forum/#!msg/meteor-talk/CBOatiMOj5c/aC23iPThYQYJ :
+"But there is a huge gotcha! Node is a single thread process which cannot scale up to use all the cores in your server. Therefore a single meteor instance is not going to suffice as your production environment, thus binding it to port 80 would not actually amount to much. Instead, you will want to run multiple instances of your meteor app, perhaps on ports 3000, 4000, 5000 etc (since you cannot run multiple instances listening on the same port) and then put a load balancer (reverse proxy) in front. That would perhaps be apache or nginx."
+
+mod_proxy_balancer
+Approach: use kraftwerk.apple.com:3000, kraftwerk.apple.com:4000, kraftwerk.apple.com:5000
+with same code on it and make all requests to kraftwerk.apple.com to go to one of them
+through LOAD BALANCER.
+Prerequisites: need Apache, need to have all user resources (DB, files (e.g. screenshots) etc. shared.
+Time to implement and test: 1-2 weeks (intensive).
+
+Need to kill HTTPD:
+httpd	This is Apache, the web server that ships with OS X. It should only be present if web sharing is enabled (in the System Preferences' Sharing pane). It is normal for there to be several of these running, one owned by root, the rest by www.
+
+
+MULTIPLE DOMAINS:
+http://www.serverfaqs.com/wiki/web-server/virtual-and-sub-domain-names/#target-toc-1
+http://timita.org/wordpress/2013/10/21/multiple-meteor-js-apps-on-the-same-domain-under-virtual-directories/
