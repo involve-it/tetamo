@@ -10,5 +10,6 @@
 #builds/
 ..*
 meteor-app/.idea
+.idea
 
 
