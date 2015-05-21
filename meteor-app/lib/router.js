@@ -37,7 +37,8 @@ Router.map(function() {
   this.route('home', {
     path: '/'
   });
-  this.route('dialog');
+  this.route('dialog');  // testing only
+  this.route('conversations');
   this.route('contacts');
   this.route('login');
 });
