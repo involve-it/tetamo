@@ -9,7 +9,9 @@
 
 #builds/
 ..*
-meteor-app/.idea
 .idea
+meteor-app/.idea
 
+.idea/**.*
+.idea/workspace.xml
 
