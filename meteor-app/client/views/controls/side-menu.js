@@ -13,7 +13,7 @@ var CONNECTION_ISSUE_TIMEOUT = 5000;
 Template.sideMenu.onRendered(function() {
 
   var bodyEl = document.body,
-      content = document.querySelector( '#main-container' ),
+      content = document.querySelector( '#content-wrapper' ),
       openbtn = document.getElementById( 'open-button' ),
       closebtn = document.getElementById( 'close-button' ),
       isOpen = false,

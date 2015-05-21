@@ -132,17 +132,13 @@ body {
 */
 
 .search::before {
-  content: "";
-  background-image: url(images/Search.png);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  content: "\f002";
+  font-family: FontAwesome;
+  font-size: 20px;
   left: 10px;
   position: absolute;
   text-align: center;
-  top: 9px;
-  width: 25px;
-  height: 25px;
+  top: -1px;
   z-index: 2;
 }
 
@@ -167,9 +163,9 @@ input.search-field {
   box-shadow: none;
   font-size: 16px;
   line-height: normal;
-  width: 44px;
-  height: 44px;
-  padding: 0 0 0 44px;
+  width: 43px;
+  height: 43px;
+  padding: 0 0 0 43px;
   border: 1px solid rgba(0, 0, 0, 0);
   background: rgba(0, 0, 0, 0);
   color: #222222;
@@ -271,6 +267,7 @@ input.search-field:focus {
 
 .item-content .inner {
   padding: 0 15pt;
+  text-align: left;
 }
 
 .user-emo {

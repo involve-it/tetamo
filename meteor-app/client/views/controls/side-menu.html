@@ -5,31 +5,33 @@
             <nav class="menu">
 
                 <div class="menu-profile">
-                    <div class="button-shutdown"></div>
+                    <div class="button-shutdown"><i class="fa fa-power-off"></i></div>
                     <div class="user-content">
-                        <div class="img-avatar">
-                            <img src="" title="User Avatar" alt=""/>
-                        </div>
+
+                            <img src="/content/avatars/avatar-no.png" width="60" height="60" title="User Avatar" alt=""/>
+
                         <div class="user-information">
-                            <div>
-                                <div class="user-fl-name">
-                                    <p>Dennis Henderson</p>
-                                </div>
-                            </div>
-                            <p class="user-location">New York, USA</p>
+                            <div class="user-fl-name">Dennis Henderson</div>
+                            <div class="user-location"><i class="fa fa-map-marker"></i> New York, USA</div>
                         </div>
                     </div>
                 </div>
 
+                <div class="nav-search">
+                    <form id="nav-form-search" class="form-search" action="#" method="post" role="search">
+                        <input type="search" autocomplete="off" class="nav-search-field" name="searchword" placeholder="search...">
+                    </form>
+                </div>
+
                 <div class="icon-list">
-                    <a href="/"><span>Home</span></a>
-                    <a href="/"><span>Messages</span></a>
-                    <a href="/"><span>Statistic</span></a>
-                    <a href="/"><span>Help</span></a>
-                    <a href="/"><span>Feedback</span></a>
+                    <a href="/"><i class="fa fa-home"></i> <span>Home</span></a>
+                    <a href="/"><i class="fa fa-envelope-o"></i> <span>Messages</span></a>
+                    <a href="/"><i class="fa fa-pie-chart"></i> <span>Statistic</span></a>
+                    <a href="/"><i class="fa fa-life-ring"></i> <span>Help</span></a>
+                    <a href="/"><i class="fa fa-cog"></i> <span>Settings</span></a>
                     <a href="/login"><span>Login</span></a>
-                    <a href="/contacts"><span>contacts</span></a>
-                    <a href="/dialog"><span>dialog</span></a>
+                    <a href="/contacts"><span>Contacts</span></a>
+                    <a href="/dialog"><span>Dialog</span></a>
                 </div>
             </nav>
             <button class="close-button" id="close-button">Close Menu</button>
