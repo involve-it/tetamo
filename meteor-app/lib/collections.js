@@ -20,9 +20,7 @@ Todos = new Mongo.Collection('todos');
 //Users.insert({
 //  name:
 //})
-if(Meteor.isClient){
-  Meteor.subscribe('users');
-}
+
 
 Messages = new Mongo.Collection('messages');
 Emotions = new Mongo.Collection('emotions');

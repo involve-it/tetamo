@@ -21,3 +21,11 @@ Meteor.publish('todos', function(listId) {
 Meteor.publish('users', function(){
    return Meteor.users.find();
 });
+Meteor.publish('messages', function(){
+  //todo:filter by user:
+   return Messages.find();
+});
+Meteor.publish('emotions', function(){
+  //todo:filter by user:
+   return Emotions.find();
+});

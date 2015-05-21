@@ -8,7 +8,10 @@
 # ignore these folders:
 
 #builds/
+#no checkin, no meteor
 ..*
+#meteor, no checkin
+-.*
 .idea
 meteor-app/.idea
 
