@@ -5,7 +5,7 @@ if(Meteor.isClient){
   var en = {
     helloWorld: 'Hello World!',
     errors: {
-      youSuck: 'Sorry, but you suck!'
+      youDoNotSuck: 'Sorry, but you are fine!'
     }
   }
   T9n.map("en", en);

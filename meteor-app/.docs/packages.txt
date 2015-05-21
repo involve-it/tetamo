@@ -9,4 +9,4 @@ GLOBALIZATION:
 https://atmospherejs.com/softwarerero/accounts-t9n
 usage:
 set: add text to resources/globalization
-get: t9n('errors.youSuck')
+get: t9n('errors.youDoNotSuck')
