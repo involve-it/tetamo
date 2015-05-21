@@ -8,8 +8,13 @@
 # ignore these folders:
 
 #builds/
+#no checkin, no meteor
 ..*
-meteor-app/.idea
+#meteor, no checkin
+-.*
 .idea
+meteor-app/.idea
 
+.idea/**.*
+.idea/workspace.xml
 

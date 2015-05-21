@@ -9,13 +9,14 @@ Router.configure({
   loadingTemplate: 'appLoading',
 
   // wait on the following subscriptions before rendering the page to ensure
-  // the data it's expecting is present
-  /*waitOn: function() {
+  // the global data it's expecting is present
+  waitOn: function() {
     return [
-      Meteor.subscribe('publicLists'),
-      Meteor.subscribe('privateLists')
+      Meteor.subscribe('users'),
+      Meteor.subscribe('messages'),
+      Meteor.subscribe('emotions')
     ];
-  }*/
+  }
 });
 
 //dataReadyHold = null;
@@ -36,7 +37,8 @@ Router.map(function() {
   this.route('home', {
     path: '/'
   });
-  this.route('dialog');
+  this.route('dialog');  // testing only
+  this.route('conversations');
   this.route('contacts');
   this.route('login');
 });
