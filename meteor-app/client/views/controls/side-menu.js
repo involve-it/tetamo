@@ -39,7 +39,7 @@ Template.sideMenu.onRendered(function() {
     content.addEventListener( 'click', function(ev) {
       var target = ev.target;
       if( isOpen && target !== openbtn ) {
-        toggleMenu();
+       toggleMenu();
       }
     } );
   }
