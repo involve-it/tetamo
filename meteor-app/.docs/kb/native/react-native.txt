@@ -1,0 +1,23 @@
+to run example on device:
+1. https://facebook.github.io/react-native/docs/tutorial.html
+2. http://facebook.github.io/react-native/docs/runningondevice.html#content
+
+react-native bundle             OR
+curl 'http://localhost:8081/index.ios.bundle?dev=false&minify=true' -o iOS/main.jsbundle
+
+
+
+REACT-NATIVE-METEOR-WEBSOCKET-POLYFILL:
+1. git clone https://github.com/hharnisc/react-native-meteor-websocket-polyfill
+   in folder: sudo npm install
+   set read/write for folder with subdirs
+
+1. Add --skipflow in packager.sh (node "$THIS_DIR/packager.js" --skipflow "$@")
+2. Run your meteor server.
+3. Make it run on the physical device:
+    run 'ipconfig getifaddr en1' (or en2..n) to get your local IP
+    change localhost in AppDelegate.m to your IP:
+        jsCodeLocation = [NSURL URLWithString:@"http://10.0.0.6:8081/index.ios.bundle"];
+
+    change localhost in index.ios.js to your IP:
+        var ddpClient = new DDPClient({url: 'ws://10.0.0.6:3000/websocket'});
