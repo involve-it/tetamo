@@ -13,7 +13,8 @@ Template.conversations.events({
         Messages.insert({
             userId: currentUser._id,
             text: messageText,
-            timestamp: new Date()
+            timestamp: new Date(),
+            keyMessage: 'own-message'
         });
     },
     'click #send-btn1': function (e, v) {
@@ -21,7 +22,8 @@ Template.conversations.events({
         Messages.insert({
             userId: friendUser._id,
             text: messageText,
-            timestamp: new Date()
+            timestamp: new Date(),
+            keyMessage: 'friend-message'
         });
     }
 })
