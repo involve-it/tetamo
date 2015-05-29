@@ -1,0 +1,60 @@
+listView {
+
+    background-color: #FFFFFE;
+}
+
+container {
+    flex:1;
+
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    background-color: transparent;
+    margin-bottom: 5;
+    padding: 0,15;
+}
+
+friendContainer {
+    align-self: flex-end;
+    border-width: 1;
+    border-radius: 2;
+    border-color: transparent;
+    background-color: rgba(238,241,244,1);
+    /*color: rgba(63,73,82,1);*/
+    margin-left: 60;
+
+}
+
+ownContainer {
+    align-self: flex-start;
+    border-width: 1;
+    border-color: rgba(222,222,222,1);
+    border-radius: 2;
+    /*color: rgba(63,73,82,1);*/
+    margin-right: 60;
+}
+
+friendMessage {
+    font-size: 13;
+    padding: 10;
+}
+
+ownMessage {
+    padding: 10;
+    font-size: 13;
+}
+
+welcome {
+  font-size: 20;
+  text-align: center;
+  margin: 10;
+}
+
+instructions {
+  text-align: center;
+  /*color: #333333;*/
+  margin-bottom: 5;
+}
+
+
