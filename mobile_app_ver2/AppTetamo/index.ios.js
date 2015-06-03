@@ -33,7 +33,7 @@ var AppTetamo = React.createClass({
     },
 
     componentDidMount: function() {
-        var ddpClient = new DDPClient({url: 'ws://192.168.1.2:3000/websocket'});
+        var ddpClient = new DDPClient({url: 'ws://192.168.1.3:3000/websocket'});
 
         ddpClient.connect(() => ddpClient.subscribe('messages'));
 

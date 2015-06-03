@@ -34,6 +34,7 @@
 		6127FC9E1B18878900352971 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6127FC9C1B18878900352971 /* ViewController.m */; };
 		6127FCAF1B188A4200352971 /* main-style.css in Resources */ = {isa = PBXBuildFile; fileRef = 6127FCAD1B188A4200352971 /* main-style.css */; };
 		6127FCB01B188A4200352971 /* main-style.js in Resources */ = {isa = PBXBuildFile; fileRef = 6127FCAE1B188A4200352971 /* main-style.js */; };
+		6127FD7E1B1EC8BD00352971 /* Dialog2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6127FD7D1B1EC8BD00352971 /* Dialog2ViewController.m */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 /* End PBXBuildFile section */
 
@@ -161,6 +162,8 @@
 		6127FC9C1B18878900352971 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = AppTetamo/ViewController.m; sourceTree = "<group>"; };
 		6127FCAD1B188A4200352971 /* main-style.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; name = "main-style.css"; path = "AppTetamo/styles/main-style.css"; sourceTree = "<group>"; };
 		6127FCAE1B188A4200352971 /* main-style.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "main-style.js"; path = "AppTetamo/styles/main-style.js"; sourceTree = "<group>"; };
+		6127FD7C1B1EC8BD00352971 /* Dialog2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Dialog2ViewController.h; path = iOS/Dialog2ViewController.h; sourceTree = "<group>"; };
+		6127FD7D1B1EC8BD00352971 /* Dialog2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Dialog2ViewController.m; path = iOS/Dialog2ViewController.m; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -292,6 +295,8 @@
 				6127FC9A1B18878900352971 /* ReactView.m */,
 				6127FC9B1B18878900352971 /* ViewController.h */,
 				6127FC9C1B18878900352971 /* ViewController.m */,
+				6127FD7C1B1EC8BD00352971 /* Dialog2ViewController.h */,
+				6127FD7D1B1EC8BD00352971 /* Dialog2ViewController.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
@@ -642,6 +647,7 @@
 				6127FC9D1B18878900352971 /* ReactView.m in Sources */,
 				6127FC9E1B18878900352971 /* ViewController.m in Sources */,
 				6127FC951B187DC000352971 /* SidebarViewController.m in Sources */,
+				6127FD7E1B1EC8BD00352971 /* Dialog2ViewController.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 				6127FC891B1875F000352971 /* SWRevealViewController.m in Sources */,
 				6127FC8F1B187BB000352971 /* AppDelegate.m in Sources */,

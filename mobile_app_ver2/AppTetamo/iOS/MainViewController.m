@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "SWRevealViewController.h"
 #import "DialogViewController.h"
+#import "Dialog2ViewController.h"
 
 @interface MainViewController ()
 
