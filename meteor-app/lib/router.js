@@ -41,4 +41,14 @@ Router.map(function() {
   this.route('conversations');
   this.route('contacts');
   this.route('login');
+
+  this.route('login-m', {
+      layoutTemplate: 'appBodyMobile',
+      template: 'login'
+  });
+
+    this.route('contacts-m', {
+        layoutTemplate: 'appBodyMobile',
+        template: 'contactsMobile'
+    });
 });
