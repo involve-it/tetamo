@@ -10,6 +10,7 @@
 #import "SWRevealViewController.h"
 #import "DialogViewController.h"
 #import "Dialog2ViewController.h"
+#import "LoginViewController.h"
 
 @interface MainViewController ()
 
