@@ -42,13 +42,20 @@ Router.map(function() {
   this.route('contacts');
   this.route('login');
 
-  this.route('login-m', {
+  this.route('m/home', {
+      layoutTemplate: 'appBodyMobile',
+      template: 'homeMobile'
+  });
+  this.route('m/login', {
       layoutTemplate: 'appBodyMobile',
       template: 'login'
   });
-
-    this.route('contacts-m', {
+  this.route('m/contacts', {
         layoutTemplate: 'appBodyMobile',
         template: 'contactsMobile'
-    });
+  });
+  this.route('m/conversations', {
+      layoutTemplate: 'appBodyMobile',
+      template: 'conversationsMobile'
+  });
 });
