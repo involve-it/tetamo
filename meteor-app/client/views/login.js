@@ -11,7 +11,7 @@ Template.login.events({
             password: $(e.target).find('[name=password]').val()
         };
 
-        if(form.phone == "" && form.password == "") {
+        if(form.phone === "" && form.password === "") {
             alert("Поля не должны быть пустой строкой")
         }else if(form.phone === form.password) {
             Router.go('/m/contacts');

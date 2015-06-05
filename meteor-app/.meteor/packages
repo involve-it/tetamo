@@ -7,7 +7,8 @@
 meteor-platform
 insecure
 less
-iron:router@0.9.4
 accounts-password
 fortawesome:fontawesome
 softwarerero:accounts-t9n
+iron:router
+joshowens:accounts-entry

@@ -34,9 +34,11 @@ if (Meteor.isClient) {
 Router.map(function() {
   this.route('join');
   this.route('signin');
-  this.route('home', {
-    path: '/'
+
+    this.route('home', {
+      path: '/'
   });
+
   this.route('dialog');  // testing only
   this.route('conversations');
   this.route('contacts');
