@@ -1,0 +1,17 @@
+<template name="profileSignedInLinks">
+    {{#if currentUser}}
+        {{#if profileUrl}}
+                <a class='profileLink' href='{{profileUrl}}'>{{{beforeSignedInAs}}}{{signedInAs}}</a>
+        {{else}}
+                <p class="navbar-text">{{{beforeSignedInAs}}}{{signedInAs}}</p>
+        {{/if}}
+    {{else}}
+        <a href="{{pathFor 'entrySignIn'}}">{{{beforeSignIn}}}{{t9n "signIn"}}</a>
+    {{/if}}
+</template>
+
+<template name="profileSignedOutLinks">
+    {{#if currentUser}}
+        <a href="{{pathFor 'entrySignOut'}}"><i class="fa fa-power-off"></i> <span>{{{beforeSignOut}}}{{t9n "signOut"}}</span></a>
+    {{/if}}
+</template>

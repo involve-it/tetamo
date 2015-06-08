@@ -36,8 +36,8 @@ Template.sideMenu.onRendered(function() {
     }
 
     //close the menu elements 'a'
-  $('.icon-list a').click(function () {
-      toggleMenu();
+  $('.menu a').click(function () {
+     toggleMenu();
   });
 
     // close the menu element if the target it´s not the menu element or one of its descendants..
