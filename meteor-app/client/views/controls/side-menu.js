@@ -17,6 +17,7 @@ Template.sideMenu.onRendered(function() {
       openbtn = document.getElementById( 'open-button' ),
       closebtn = document.getElementById( 'close-button' ),
       isOpen = false,
+      menu = $('.menu a'),
 
       morphEl = document.getElementById( 'morph-shape' ),
       s = Snap( morphEl.querySelector( 'svg' ) );
@@ -36,7 +37,7 @@ Template.sideMenu.onRendered(function() {
     }
 
     //close the menu elements 'a'
-  $('.menu a').click(function () {
+  menu.click(function () {
      toggleMenu();
   });
 
