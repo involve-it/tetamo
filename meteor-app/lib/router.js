@@ -34,10 +34,17 @@ if (Meteor.isClient) {
 Router.map(function() {
   this.route('join');
   this.route('signin');
-
-    this.route('home', {
+  this.route('home', {
       path: '/'
   });
+
+    this.route('profile', {
+        path:'/profile',
+        template: 'profile',
+        onBeforeAction: function () {
+            AccountsEntry.signInRequired(this);
+        }
+    });
 
   this.route('dialog');  // testing only
   this.route('conversations');
@@ -60,4 +67,5 @@ Router.map(function() {
       layoutTemplate: 'appBodyMobile',
       template: 'conversationsMobile'
   });
+
 });

@@ -29,3 +29,7 @@ Meteor.publish('emotions', function(){
   //todo:filter by user:
    return Emotions.find();
 });
+
+Meteor.publish('singleUser', function(userId) {
+    return Meteor.users.find(userId);
+});

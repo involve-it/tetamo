@@ -4,24 +4,47 @@
 Template.conversations.created = function () {
   currentUser = Meteor.user();
   friendUser = Meteor.users.findOne({username: 'user'});
-}
+};
+
 Template.conversations.rendered = function () {
-}
+};
+
 Template.conversations.events({
   'click #send-btn': function (e, v) {
     if(!currentUser){
       alert('please login');
     } else {
       var messageText = v.$('#message-input').val();
-      Messages.insert({
-        userId: currentUser._id,
-        text: messageText,
-        timestamp: new Date(),
-        keyMessage: 'own-message'
-      });
-      $('.message:last').backgroundEmotion();
+      if(messageText != '') {
+          Messages.insert({
+              userId: currentUser._id,
+              text: messageText,
+              timestamp: new Date(),
+              keyMessage: 'own-message'
+          });
+
+          $('.message:last').backgroundEmotion();
+
+          v.$('#message-input').val('');
+      }//end if
     }
   },
+  'keydown input#message-input': function(e, v) {
+
+      if(e.which == 13) {
+          var messageText = v.$('#message-input').val();
+          if(messageText != '') {
+              Messages.insert({
+                  userId: currentUser._id,
+                  text: messageText,
+                  timestamp: new Date(),
+                  keyMessage: 'own-message'
+              });
+
+              v.$('#message-input').val('');
+          }//end if
+      }
+  }
   //'click #send-btn1': function (e, v) {
   //  var messageText = v.$('#message-input1').val();
   //  Messages.insert({
@@ -31,7 +54,8 @@ Template.conversations.events({
   //    keyMessage: 'friend-message'
   //  });
   //}
-})
+});
+
 Template.conversations.helpers({
   getMessages: function (a, b) {
     var usersArr = [];
