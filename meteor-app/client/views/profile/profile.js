@@ -6,3 +6,5 @@ Template.profile.helpers({
     profileName: function() {return Meteor.user().profile.name},
     email: function() {return Meteor.user().emails[0].address}
 });
+
+console.log(Meteor.userId());

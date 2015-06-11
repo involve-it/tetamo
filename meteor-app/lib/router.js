@@ -31,6 +31,10 @@ if (Meteor.isClient) {
   //Router.onBeforeAction('dataNotFound', {except: ['join', 'signin']});
 }
 
+ProfileController = RouteController.extend({
+    template: 'profile'
+});
+
 Router.map(function() {
   this.route('join');
   this.route('signin');
@@ -40,7 +44,7 @@ Router.map(function() {
 
     this.route('profile', {
         path:'/profile',
-        template: 'profile',
+        controller: ProfileController,
         onBeforeAction: function () {
             AccountsEntry.signInRequired(this);
         }

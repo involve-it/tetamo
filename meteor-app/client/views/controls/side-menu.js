@@ -36,8 +36,10 @@ Template.sideMenu.onRendered(function() {
     }
 
     //close the menu elements 'a'
-  $('.menu a').click(function () {
-     toggleMenu();
+  $('.menu').click(function () {
+     $('a').each(function() {
+        toggleMenu();
+     });
   });
 
     // close the menu element if the target it´s not the menu element or one of its descendants..
@@ -77,4 +79,5 @@ Template.sideMenu.helpers({
 });
 
 Template.sideMenu.events({
+
 });

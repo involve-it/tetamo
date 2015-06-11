@@ -1,8 +1,34 @@
 <template name="profile">
     <div class="page--profile">
-        <p>Profile name: {{profileName}}</p>
-        <p></p>
-        <p>Email: {{email}}</p>
-        <p></p>
+        <div class="top-bar nav-bar-block nav-bar-color">
+            <div class="inner-content">
+
+            </div>
+        </div>
+
+        <div class="profile-box has-header">
+            <div class="profile-narrow">
+                <div class="owner-photo-wrap">
+                    <div class="img-avatar">
+                        <img src="/content/avatars/avatar-no.png" width="120" height="120" title="User Avatar" alt=""/>
+                    </div>
+                    <div class="owner-photo_bubble-wrap">
+                        <div><a href="#">Change avatar</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="profile-wide">
+                <p class="name-label"> Anonymous </p>
+                <p class="user-name-label"><span>User name:</span> {{profileName}}</p>
+                <p class="email-label"><span>Email:</span> {{email}}</p>
+                <p class="phone-label"><span>Your phone:</span>  none</p>
+            </div>
+        </div>
+
+
+
+
+
+
     </div>
 </template>

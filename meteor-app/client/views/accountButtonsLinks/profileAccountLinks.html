@@ -1,7 +1,7 @@
 <template name="profileSignedInLinks">
     {{#if currentUser}}
         {{#if profileUrl}}
-                <a class='profileLink' href='{{profileUrl}}'>{{{beforeSignedInAs}}}{{signedInAs}}</a>
+                <a class='profileLink' href='{{ pathFor 'profile' }}'>{{{beforeSignedInAs}}}{{signedInAs}}</a>
         {{else}}
                 <p class="navbar-text">{{{beforeSignedInAs}}}{{signedInAs}}</p>
         {{/if}}
