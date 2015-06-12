@@ -7,6 +7,7 @@ Template.conversations.created = function () {
 };
 
 Template.conversations.rendered = function () {
+  Trail();
 };
 
 Template.conversations.events({
@@ -16,16 +17,7 @@ Template.conversations.events({
     } else {
       var messageText = v.$('#message-input').val();
       if(messageText != '') {
-          Messages.insert({
-              userId: currentUser._id,
-              text: messageText,
-              timestamp: new Date(),
-              keyMessage: 'own-message'
-          });
-
-          $('.message:last').backgroundEmotion();
-
-          v.$('#message-input').val('');
+        sendMessage(messageText, v);
       }//end if
     }
   },
@@ -34,14 +26,8 @@ Template.conversations.events({
       if(e.which == 13) {
           var messageText = v.$('#message-input').val();
           if(messageText != '') {
-              Messages.insert({
-                  userId: currentUser._id,
-                  text: messageText,
-                  timestamp: new Date(),
-                  keyMessage: 'own-message'
-              });
+            sendMessage(messageText, v);
 
-              v.$('#message-input').val('');
           }//end if
       }
   }
@@ -79,3 +65,16 @@ Template.conversationsMessage.helpers({
   isOwnMessage: function () {
   }
 });
+
+//HELPERS:
+function sendMessage(messageText, view){
+  Messages.insert({
+    userId: currentUser._id,
+    text: messageText,
+    timestamp: new Date(),
+    keyMessage: 'own-message'
+  });
+  $('.message:last').backgroundEmotion();
+  view.$('#message-input').val('');
+
+}
