@@ -1,19 +1,22 @@
 <template name="contact">
-    <div class="control--contact">
+    <a href="{{ getUrl }}">
+        <div class="item">
+            <div class="control--contact">
+                <div class="avatar">
+                    <img src="{{ avatarPath }}" title="" alt=""/>
+                </div>
 
-        <div class="avatar">
-            <img src="{{ avatarPath }}" title="" alt=""/>
-        </div>
-
-        <div class="item-content">
-            <div class="inner">
-                <div class="user-emo">Anger</div>
-                <span class="time-stamp">22:30</span>
-                <div class="user-name-label">Nancy Alvarado</div>
-                <div class="user-status online">online</div>
-                <p class="user-last-message">Hi! What did you do??</p>
+                <div class="item-content">
+                    <div class="inner">
+                        <div class="user-emo">Anger</div>
+                        <span class="time-stamp">22:30</span>
+                        <div class="user-name-label"> {{ getUsername }}</div>
+                        <div class="user-status online">online</div>
+                        <p class="user-last-message">Hi! What did you do??</p>
+                    </div>
+                </div>
+                <div class="line-context-emotions"></div>
             </div>
         </div>
-        <div class="line-context-emotions"></div>
-    </div>
+    </a>
 </template>

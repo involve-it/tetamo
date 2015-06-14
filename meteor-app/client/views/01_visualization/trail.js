@@ -10,8 +10,8 @@
  */
 
 Trail = function() {
-  var SCREEN_WIDTH = 900;
-  var SCREEN_HEIGHT = 600;
+  var SCREEN_WIDTH = $(document).width();
+  var SCREEN_HEIGHT = $(document).height();
 
   var RADIUS = 33;
 
@@ -131,8 +131,8 @@ Trail = function() {
     RADIUS_SCALE = Math.min(RADIUS_SCALE, RADIUS_SCALE_MAX);
 
     // Fade out the lines slowly by drawing a rectangle over the entire canvas
-    context.fillStyle = 'rgba(0,0,0,0.05)';
     //context.fillStyle = 'rgba(0,0,0,0.05)';
+    context.fillStyle = 'rgba(255,255,255,0.05)';
     //context.fillStyle = '#FF0000)';
     context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 

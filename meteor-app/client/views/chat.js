@@ -1,16 +1,16 @@
 /**
  * Created by ashot on 5/20/15.
  */
-Template.conversations.created = function () {
+Template.chat.created = function () {
   currentUser = Meteor.user();
-  friendUser = Meteor.users.findOne({username: 'user'});
+  friendUser = Router.current().params.userId;
 };
 
-Template.conversations.rendered = function () {
+Template.chat.rendered = function () {
   Trail();
 };
 
-Template.conversations.events({
+Template.chat.events({
   'click #send-btn': function (e, v) {
     if(!currentUser){
       alert('please login');
@@ -42,7 +42,7 @@ Template.conversations.events({
   //}
 });
 
-Template.conversations.helpers({
+Template.chat.helpers({
   getMessages: function (a, b) {
     var usersArr = [];
     currentUser && usersArr.push(currentUser._id);
@@ -51,7 +51,7 @@ Template.conversations.helpers({
   }
 });
 
-Template.conversation.helpers({
+Template.chatMessage.helpers({
   getMessageClass: function () {
     var className = '';
     if (this.userId === currentUser._id) {
@@ -70,11 +70,11 @@ Template.conversation.helpers({
 function sendMessage(messageText, view){
   Messages.insert({
     userId: currentUser._id,
+    toUserId: friendUser._id,
     text: messageText,
     timestamp: new Date(),
     keyMessage: 'own-message'
   });
-  $('.message:last').backgroundEmotion();
+  var e = $('.message:last').backgroundEmotion();
   view.$('#message-input').val('');
-
 }

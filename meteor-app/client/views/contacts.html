@@ -30,7 +30,7 @@
                         <h2 class="title"><i class="icon-new-message"></i> New message</h2>
                     </div>
 
-                    <a href="conversations">
+                    <!--<a href="conversations">
                     <div class="item">
                         <div class="avatar">
                             <img src="http://api.randomuser.me/portraits/thumb/women/39.jpg" title="" alt=""/>
@@ -85,14 +85,10 @@
                         </div>
                         <div class="line-context-emotions two"></div>
                     </div>
-                    </a>
-
-                    <a href="conversations">
-                    <div class="item">
+                    </a>-->
+                    {{#each contacts}}
                         {{> contact }}
-                    </div>
-                    </a>
-
+                    {{/each}}
                 </div>
             </div>
         </div>

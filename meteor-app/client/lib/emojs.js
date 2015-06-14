@@ -3058,6 +3058,7 @@ $.fn.drawEmotion = function(contextName, sourceEmotionText) {
 };
 
 $.fn.backgroundEmotion = function(contextName, sourceEmotionText) {
+  debugger;
   var attr, emotion, i, imgData, synemania, tempCanvasEl, text, that, x, _i, _j, _ref, _results;
   contextName = contextName || 'default';
   that = this;

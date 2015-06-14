@@ -1,4 +1,4 @@
-<template name="conversations">
+<template name="chat">
     <div class="page--conversations">
 
         <div class="top-bar nav-bar-block nav-bar-color">
@@ -28,7 +28,7 @@
         <div class="messages-container has-header">
 
             {{#each getMessages}}
-                {{> conversation }}
+                {{> chatMessage }}
             {{/each}}
         </div>
         <div class="user-inputs-messages">
@@ -49,8 +49,8 @@
     </div>
 </template>
 
-<template name="conversation">
-    <div class="conversation--wrapper">
+<template name="chatMessage">
+    <div class="conversations--message-wrapper">
         <div class="message {{ getMessageClass}}">
             {{ text }}
         </div>

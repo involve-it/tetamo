@@ -52,6 +52,11 @@ Router.map(function() {
 
   this.route('dialog');  // testing only
   this.route('conversations');
+  this.route('chat');   // will choose with whom
+  this.route('chatUser', {
+    path: 'chat/:userId',
+    template: 'chat'
+  });
   this.route('contacts');
   this.route('login');
 
