@@ -1,6 +1,24 @@
 /**
  * Created by ashot on 5/20/15.
  */
+
+Template.conversations.onRendered(function() {
+
+    $.each($('textarea[data-autoresize]'), function() {
+        var offset = this.offsetHeight - this.clientHeight;
+        var resizeTextarea = function(el) {
+            $(el).css('height', 'auto').css('height', el.scrollHeight + offset);
+        };
+
+        $(this).on('keyup input', function() {
+            if(this.scrollHeight > 44) {
+                resizeTextarea(this);
+            }
+        }).removeAttr('data-autoresize');
+    });
+
+});
+
 Template.chat.created = function () {
   currentUser = Meteor.user();
   friendUser = Router.current().params.userId;
