@@ -6,7 +6,8 @@ Template.contacts.helpers({
     var currUser = Meteor.user(),
       contacts;
     if(currUser.contacts){
-      contacts = Meteor.users.find({_id: { $in: currUser.contacts }})
+      contacts = Meteor.users.find({_id: { $in: currUser.contacts }});
+      //contacts = Meteor.users.find({});
     }
     return contacts;
   }

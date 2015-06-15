@@ -30,3 +30,9 @@ Dialogs = new Mongo.Collection('dialogs');
 
 // EMOTIONS (TODO):
 //Lists = new Mongo.Collection('');
+
+Meteor.users.allow({
+    update: function (userId, doc) {
+        return (userId == Meteor.userId());
+    }
+});

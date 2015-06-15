@@ -2990,9 +2990,9 @@ $.fn.art = function(contextName, moduleName) {
       return ret.update(state);
     });
   } else if (moduleName === 'splash') {
-    debugger;
+    //debugger;
   } else {
-    debugger;
+    //debugger;
   }
   return ret;
 };
@@ -3014,9 +3014,9 @@ $.fn.backgroundContext = function(contextName, moduleName) {
         ret.draw(contextName);
       }
     } else if (moduleName === 'splash') {
-      debugger;
+      //debugger;
     } else {
-      debugger;
+    //  debugger;
     }
     imgData = tempCanvasEl[0].toDataURL();
     that.css('background', 'url("' + imgData + '")');
@@ -3058,7 +3058,7 @@ $.fn.drawEmotion = function(contextName, sourceEmotionText) {
 };
 
 $.fn.backgroundEmotion = function(contextName, sourceEmotionText) {
-  debugger;
+  //debugger;
   var attr, emotion, i, imgData, synemania, tempCanvasEl, text, that, x, _i, _j, _ref, _results;
   contextName = contextName || 'default';
   that = this;

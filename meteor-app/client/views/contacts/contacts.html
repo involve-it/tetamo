@@ -20,12 +20,7 @@
         <div class="contacts-list">
             <div class="scroll-content">
                 <div class="overflow-scroll">
-                    <!--Hidden if don't contacts -->
-                    <div class="wrapper-message">
-                        <div class="title-message">No contacts here</div>
-                        <div class="subtitle-message">Add new contact using main menu</div>
-                    </div>
-                    <!-- end -->
+
                     <div class="new-message">
                         <h2 class="title"><i class="icon-new-message"></i> New message</h2>
                     </div>
@@ -86,9 +81,15 @@
                         <div class="line-context-emotions two"></div>
                     </div>
                     </a>-->
+
+                {{#if contacts}}
                     {{#each contacts}}
                         {{> contact }}
                     {{/each}}
+                {{else}}
+                    {{> noContacts}}
+                {{/if}}
+
                 </div>
             </div>
         </div>

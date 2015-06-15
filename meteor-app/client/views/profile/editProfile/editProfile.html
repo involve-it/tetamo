@@ -1,0 +1,52 @@
+<template name="editProfile">
+    <div class="page--editProfile">
+        <div class="top-bar nav-bar-block nav-bar-color">
+            <div class="inner-content">
+
+            </div>
+        </div>
+
+        {{#if currentUser}}
+
+            <div class="owner-photo-wrap">
+                <div class="img-avatar">
+
+                </div>
+            </div>
+            <br><br><br><br><br>
+
+
+            <form class="editProfile-box has-header">
+                <div class="control-group">
+                    <label class="control-label" for="url">User name:</label>
+                    <div class="controls">
+                        <input name="profileName" type="text" value="{{profileName}}" />
+                    </div>
+                </div>
+                <br>
+                <div class="control-group">
+                    <label class="control-label" for="title">Email:</label>
+                    <div class="controls">
+                        <input name="email" type="text" value="{{email}}" />
+                    </div>
+                </div>
+                <br>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="submit" value="Save profile" class="btn btn-primary submit"/>
+                    </div>
+                </div>
+                <hr/>
+                <div class="control-group">
+                    <div class="controls">
+                        <a class="btn btn-danger delete" href="#">Delete account</a>
+                    </div>
+                </div>
+            </form>
+
+        {{/if}}
+
+
+    </div>
+
+</template>

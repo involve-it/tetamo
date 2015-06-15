@@ -31,10 +31,6 @@ if (Meteor.isClient) {
   //Router.onBeforeAction('dataNotFound', {except: ['join', 'signin']});
 }
 
-ProfileController = RouteController.extend({
-    template: 'profile'
-});
-
 Router.map(function() {
   this.route('join');
   this.route('signin');
@@ -42,13 +38,23 @@ Router.map(function() {
       path: '/'
   });
 
+    /* User profile page */
+
     this.route('profile', {
-        path:'/profile',
-        controller: ProfileController,
-        onBeforeAction: function () {
-            AccountsEntry.signInRequired(this);
+        path:'/profile/:_id',
+        data: function() {
+            return Meteor.users.findOne({_id: this.params._id});
         }
     });
+
+    this.route('editProfile', {
+        path: '/profile/:_id/edit',
+        data: function() {
+            return Meteor.users.findOne({_id: this.params._id});
+        }
+    });
+
+    /* END */
 
   this.route('dialog');  // testing only
   this.route('conversations');

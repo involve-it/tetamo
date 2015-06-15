@@ -16,7 +16,14 @@ Template.contact.helpers({
   },
   getUrl : function(){
     return 'chat/' + this._id
-  }
+  },
+    'getUrlProfile': function() {
+        return 'profile/' + this._id;
+    },
+    'lastMessage': function() {
+        var message = Messages.findOne({userId: this._id},{sort: {timestamp: -1}});
+        return message.text;
+    }
 });
 
 Template.contact.events({

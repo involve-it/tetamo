@@ -3,8 +3,17 @@
  */
 
 Template.profile.helpers({
-    profileName: function() {return Meteor.user().profile.name},
-    email: function() {return Meteor.user().emails[0].address}
+    canEditProfile: function() {
+        var currentUserId = this._id;
+        return (Meteor.userId() === currentUserId);
+    },
+    profileName: function() {
+        return this.profile.name || 'Anonymous'
+    },
+    email: function() {
+        return this.emails[0].address
+    },
+    userId: function() {
+        return this._id;
+    }
 });
-
-console.log(Meteor.userId());
