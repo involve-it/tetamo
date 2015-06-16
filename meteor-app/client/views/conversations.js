@@ -34,6 +34,9 @@ Template.conversations.events({
       alert('please login');
     } else {
       var messageText = v.$('#message-input').val();
+        if($.trim(messageText) === "") {
+            return false;
+        }
       if(messageText != '') {
         sendMessage(messageText, v);
       }//end if
@@ -43,6 +46,9 @@ Template.conversations.events({
 
       if(e.which === 13) {
           var messageText = v.$('#message-input').val();
+          if($.trim(messageText) === "") {
+              return false;
+          }
           if(messageText != '') {
             sendMessage(messageText, v);
 

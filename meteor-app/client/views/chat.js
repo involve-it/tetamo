@@ -2,7 +2,7 @@
  * Created by ashot on 5/20/15.
  */
 
-Template.conversations.onRendered(function() {
+Template.chat.onRendered(function() {
 
     $.each($('textarea[data-autoresize]'), function() {
         var offset = this.offsetHeight - this.clientHeight;
@@ -25,7 +25,7 @@ Template.chat.created = function () {
 };
 
 Template.chat.rendered = function () {
- Trail();
+ //Trail();
 };
 
 Template.chat.events({
@@ -34,19 +34,24 @@ Template.chat.events({
       alert('please login');
     } else {
       var messageText = v.$('#message-input').val();
-      if(messageText != '') {
-        sendMessage(messageText, v);
-      }//end if
+        if($.trim(messageText) === "") {
+            return false;
+        }
+        if(messageText != '') {
+          sendMessage(messageText, v);
+        }//end if
     }
   },
   'keydown #message-input': function(e, v) {
 
       if(e.which == 13) {
           var messageText = v.$('#message-input').val();
+          if($.trim(messageText) === "") {
+              return false;
+          }
           if(messageText != '') {
             sendMessage(messageText, v);
-
-          }//end if
+          }
       }
   }
   //'click #send-btn1': function (e, v) {
@@ -68,7 +73,10 @@ Template.chat.helpers({
     //debugger;
     var messages = Messages.find({userId: {$in: usersArr}, toUserId: {$in: usersArr}});
     return messages;
-  }
+  },
+    getFriendUserName: function() {
+        return Meteor.users.findOne({_id: friendUserId}).profile.name;
+    }
 });
 
 Template.chatMessage.helpers({

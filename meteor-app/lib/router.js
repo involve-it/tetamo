@@ -36,90 +36,100 @@ Router.map(function() {
   this.route('signin');
   this.route('home', {
       path: '/'
-  });
+});
 
-    /* User profile page */
-    Router.route('/profile/', function () {
-        //debugger;
-        var id = Meteor.userId();
-        if(id) {
-            Router.go('/profile/' + id);
-        } else {
+    this.route('dialog');  // testing only
 
-        }
-        //this.render('Items');
+    this.route('m/home', {
+        layoutTemplate: 'appBodyMobile',
+        template: 'homeMobile'
     });
 
-    this.route('profile_id', {
-        template: 'profile',
-        path:'/profile/:_id',
-        data: function() {
-            return Meteor.users.findOne({_id: this.params._id});
-        }
-    });
-
-    this.route('editProfile', {
-        path: '/profile/:_id/edit',
-        data: function() {
-            return Meteor.users.findOne({_id: this.params._id});
-        }
-    });
-
-    /* END */
-
-  this.route('dialog');  // testing only
-
-
-
-  this.route('chatUser', {
-    path: 'chat/:userId',
-    template: 'chat'
-  });
-  //this.route('contacts');
-
-  this.route('m/home', {
-      layoutTemplate: 'appBodyMobile',
-      template: 'homeMobile'
-  });
-  this.route('m/contacts', {
+    this.route('m/contacts', {
         layoutTemplate: 'appBodyMobile',
         template: 'contactsMobile'
-  });
-  this.route('m/conversations', {
-      layoutTemplate: 'appBodyMobile',
-      template: 'conversationsMobile'
-  });
+    });
+
+    this.route('m/conversations', {
+        layoutTemplate: 'appBodyMobile',
+        template: 'conversationsMobile'
+    });
 
 });
 
-
-Router.route('/contacts', {name: 'contacts'});
-Router.route('/conversations', {name: 'conversations'});
-Router.route('/chat');   // will choose with whom
 
 /*
 * Routing hooks
 * Проверка залогинен пользователь или нет, если true, чтобы не было задержек в передачи данных между клиентом и сервером
 * проверяем верный логин или нет, пока ждем ответа, показываем шаблон загрузки
 * */
-var requireLogin = function() {
-    if( ! Meteor.user() ) {
-        if(Meteor.loggingIn()) {
-            this.render(this.loadingTemplate);
-        } else {
-            Router.go('entrySignIn');
-        }
+
+Router.route('/contacts', {
+    name: 'contacts',
+    controller: 'requireLoginController'
+});
+
+Router.route('/conversations', {
+    name: 'conversations',
+    controller: 'requireLoginController'
+});
+
+Router.route('/chat', {
+    name: 'chat',
+    controller: 'requireLoginController'
+});
+
+Router.route('chatUser', {
+    path: 'chat/:userId',
+    template: 'chat',
+    controller: 'requireLoginController'
+});
+
+Router.route('/profile/',{
+    name: 'profile',
+    controller: 'requireLoginController'
+},
+    function () {
+    var id = Meteor.userId();
+    if(id) {
+        Router.go('/profile/' + id);
     } else {
-        this.next();
+
     }
-};
+    //this.render('Items');
+});
 
-//last line of the file
-Router.onBeforeAction(requireLogin, {only: 'contacts'});
-Router.onBeforeAction(requireLogin, {only: 'conversations'});
-Router.onBeforeAction(requireLogin, {only: 'chat'});
+Router.route('profile_id', {
+    template: 'profile',
+    path:'/profile/:_id',
+    controller: 'requireLoginController',
+    data: function() {
+        return Meteor.users.findOne({_id: this.params._id});
+    }
+});
 
+Router.route('editProfile', {
+    path: '/profile/:_id/edit',
+    controller: 'requireLoginController',
+    data: function() {
+        return Meteor.users.findOne({_id: this.params._id});
+    }
+});
 
+requireLoginController = RouteController.extend({
+
+    onBeforeAction: function() {
+        if( ! Meteor.user() ) {
+            if(Meteor.loggingIn()) {
+                this.render(this.loadingTemplate);
+            } else {
+                Router.go('entrySignIn');
+            }
+        } else {
+            this.next();
+        }
+    }
+});
 
 
 
