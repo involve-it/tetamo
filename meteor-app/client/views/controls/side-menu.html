@@ -25,10 +25,13 @@
 
                 <div class="icon-list">
                     <a href="/"><i class="fa fa-home"></i> <span>Home</span></a>
-                    <a href="/login"><span>Login</span></a>
-                    <a href="/contacts"><span>Contacts</span></a>
-                    <a href="/conversations"><span>Conversations</span></a>
-                    {{> profileSignedOutLinks}}
+
+                    {{#if currentUser}}
+                        <a href="/contacts"><span>Contacts</span></a>
+                        <a href="/conversations"><span>Conversations</span></a>
+                        {{> profileSignedOutLinks}}
+                    {{/if}}
+
                 </div>
             </nav>
             <button class="close-button" id="close-button">Close Menu</button>

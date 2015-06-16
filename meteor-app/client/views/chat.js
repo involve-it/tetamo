@@ -25,7 +25,7 @@ Template.chat.created = function () {
 };
 
 Template.chat.rendered = function () {
-  Trail();
+ Trail();
 };
 
 Template.chat.events({
@@ -39,7 +39,7 @@ Template.chat.events({
       }//end if
     }
   },
-  'keydown input#message-input': function(e, v) {
+  'keydown #message-input': function(e, v) {
 
       if(e.which == 13) {
           var messageText = v.$('#message-input').val();
@@ -65,7 +65,7 @@ Template.chat.helpers({
     var usersArr = [];
     currentUser && usersArr.push(currentUser._id);
     friendUserId && usersArr.push(friendUserId);
-    debugger;
+    //debugger;
     var messages = Messages.find({userId: {$in: usersArr}, toUserId: {$in: usersArr}});
     return messages;
   }

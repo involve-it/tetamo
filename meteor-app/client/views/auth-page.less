@@ -25,9 +25,8 @@
   .link-auth-alt {
     margin: 10px 0;
   }
-
+/*
   .footer {
-    /*height: 41px;*/
     height: auto;
     position: absolute;
     bottom: 0px;
@@ -45,7 +44,7 @@
     margin: 0;
     font-size: 13px;
   }
-
+*/
   .link-forgot-password {
   }
 
@@ -125,5 +124,71 @@
 
   .form-group0 {
     margin-top: 10%;
+  }
+}
+
+//Delete after deploy Alfa version
+.fake-box {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+
+  h1 {
+    font-weight: lighter;
+    font-family: "Avenir Next";
+    font-size: 5em;
+    color: #FF8CBC;
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
+
+  h3 {
+    margin-top: 5px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: lighter;
+    font-size: 2em;
+    color: #999999;
+  }
+
+}
+
+.fake-box-below {
+  overflow: hidden;
+  margin: 30px;
+  .auth-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+
+      display: inline-block;
+      font-size: 16px;
+      margin: 0 20px;
+      padding: 10px 8px;
+      border-radius:2px;
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+
+    li:first-child {
+      background-color: #4285f4;
+    }
+
+    li:last-child {
+      background-color: #db4437;
+    }
+
+    li:hover:first-child {
+      background-color: #3262ba;
+    }
+
+    li:hover:last-child {
+      background-color: #fb4c2f;
+    }
+
   }
 }

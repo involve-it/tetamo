@@ -39,8 +39,19 @@ Router.map(function() {
   });
 
     /* User profile page */
+    Router.route('/profile/', function () {
+        //debugger;
+        var id = Meteor.userId();
+        if(id) {
+            Router.go('/profile/' + id);
+        } else {
 
-    this.route('profile', {
+        }
+        //this.render('Items');
+    });
+
+    this.route('profile_id', {
+        template: 'profile',
         path:'/profile/:_id',
         data: function() {
             return Meteor.users.findOne({_id: this.params._id});
@@ -57,22 +68,18 @@ Router.map(function() {
     /* END */
 
   this.route('dialog');  // testing only
-  this.route('conversations');
-  this.route('chat');   // will choose with whom
+
+
+
   this.route('chatUser', {
     path: 'chat/:userId',
     template: 'chat'
   });
-  this.route('contacts');
-  this.route('login');
+  //this.route('contacts');
 
   this.route('m/home', {
       layoutTemplate: 'appBodyMobile',
       template: 'homeMobile'
-  });
-  this.route('m/login', {
-      layoutTemplate: 'appBodyMobile',
-      template: 'login'
   });
   this.route('m/contacts', {
         layoutTemplate: 'appBodyMobile',
@@ -84,3 +91,38 @@ Router.map(function() {
   });
 
 });
+
+
+Router.route('/contacts', {name: 'contacts'});
+Router.route('/conversations', {name: 'conversations'});
+Router.route('/chat');   // will choose with whom
+
+/*
+* Routing hooks
+* Проверка залогинен пользователь или нет, если true, чтобы не было задержек в передачи данных между клиентом и сервером
+* проверяем верный логин или нет, пока ждем ответа, показываем шаблон загрузки
+* */
+var requireLogin = function() {
+    if( ! Meteor.user() ) {
+        if(Meteor.loggingIn()) {
+            this.render(this.loadingTemplate);
+        } else {
+            Router.go('entrySignIn');
+        }
+    } else {
+        this.next();
+    }
+};
+
+//last line of the file
+Router.onBeforeAction(requireLogin, {only: 'contacts'});
+Router.onBeforeAction(requireLogin, {only: 'conversations'});
+Router.onBeforeAction(requireLogin, {only: 'chat'});
+
+
+
+
+
+
+
+

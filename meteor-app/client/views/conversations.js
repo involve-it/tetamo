@@ -25,7 +25,7 @@ Template.conversations.created = function () {
 };
 
 Template.conversations.rendered = function () {
-  Trail();
+  //Trail();
 };
 
 Template.conversations.events({
@@ -39,9 +39,9 @@ Template.conversations.events({
       }//end if
     }
   },
-  'keydown input#message-input': function(e, v) {
+  'keydown #message-input': function(e, v) {
 
-      if(e.which == 13) {
+      if(e.which === 13) {
           var messageText = v.$('#message-input').val();
           if(messageText != '') {
             sendMessage(messageText, v);

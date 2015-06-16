@@ -3,7 +3,7 @@
         <div class="page auth">
             <div class="content-scrollable">
                 <div class="wrapper-auth">
-                        <h1 class="title-auth">Tetamo</h1>
+                        <h1 class="title-auth">Fantasia</h1>
                         <p class="subtitle-auth">emotional chat</p>
                         {{#if logo}}
                         <!--
@@ -13,6 +13,9 @@
                         -->
                         {{/if}}
                       <div class="">
+                          <div class="h3-title">
+                              <h3>&nbsp;</h3>
+                          </div>
                         {{#if otherLoginServices}}
                         <div class="entry-social">
                           {{#each loginServices}}
@@ -48,6 +51,11 @@
                                  <p><a href="{{pathFor 'entryForgotPassword'}}">{{t9n "forgotPassword"}}</a></p>
                                  <button type="submit" class="submit btn btn-primary">{{t9n "signIn"}}</button>
                              {{/unless}}
+
+                              {{#if showCreateAccountLink}}
+                                  <p class="entry-signup-cta">{{t9n "dontHaveAnAccount"}} <a class="link-auth-alt" href="{{pathFor 'entrySignUp'}}">{{t9n "signUp"}}</a></p>
+                              {{/if}}
+
                           </form>
                         {{/if}}
 
@@ -58,68 +66,5 @@
                 </div>
             </div>
         </div>
-
-
-        <div class="footer">
-            <div class="container">
-                {{#if showCreateAccountLink}}
-                    <p class="entry-signup-cta">{{t9n "dontHaveAnAccount"}} <a class="link-auth-alt" href="{{pathFor 'entrySignUp'}}">{{t9n "signUp"}}</a></p>
-                {{/if}}
-            </div>
-        </div>
   </div>
 </template>
-
-
-
-<!--
-  <div class="{{containerCSSClass}}">
-    <div class="{{rowCSSClass}}">
-      {{#if logo}}
-        <div class="entry-logo">
-            <a href="/"><img src="{{logo}}" alt="logo"></a>
-        </div>
-      {{/if}}
-      <div class="entry col-md-4 col-md-offset-4">
-        {{#if otherLoginServices}}
-        <div class="entry-social">
-          {{#each loginServices}}
-    {{> entrySocial}}
-{{/each}}
-    {{#if passwordLoginService}}
-          <div class="email-option">
-            <strong class="line-thru or-sign-in">{{t9n "OR"}}</strong>
-          </div>
-          {{/if}}
-        </div>
-        {{/if}}
-    {{> entryError}}
-    {{#unless otherLoginServices}}
-          <div class="email-option">
-            <h3>{{t9n "signIn"}}</h3>
-          </div>
-        {{/unless}}
-    {{#if passwordLoginService}}
-          <form class="entry-form" id='signIn'>
-            <div class="form-group">
-              <input autofocus name="email" type="{{emailInputType}}" class="form-control" value='{{email}}' placeholder="{{emailPlaceholder}}" autocapitalize="none" autocomplete="off" autocorrect="off">
-            </div>
-            <div class="form-group">
-              <input name="password" type="password" class="form-control" value='{{password}}' placeholder="{{t9n 'password'}}">
-            </div>
-            {{#unless isUsernameOnly}}
-              <p><a href="{{pathFor 'entryForgotPassword'}}">{{t9n "forgotPassword"}}</a></p>
-              <button type="submit" class="submit btn btn-block btn-default">{{t9n "signIn"}}</button>
-            {{/unless}}
-          </form>
-        {{/if}}
-    {{#if showCreateAccountLink}}
-        <p class="entry-signup-cta">{{t9n "dontHaveAnAccount"}} <a href="{{pathFor 'entrySignUp'}}">{{t9n "signUp"}}</a></p>
-        {{/if}}
-    {{#if talkingToServer}}
-        {{> spinner}}
-    {{/if}}
-      </div>
-    </div>
-  </div>
--->

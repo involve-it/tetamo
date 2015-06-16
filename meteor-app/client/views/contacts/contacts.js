@@ -7,7 +7,6 @@ Template.contacts.helpers({
       contacts;
     if(currUser.contacts){
       contacts = Meteor.users.find({_id: { $in: currUser.contacts }});
-      //contacts = Meteor.users.find({});
     }
     return contacts;
   }
