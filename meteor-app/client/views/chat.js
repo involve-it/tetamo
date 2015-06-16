@@ -21,7 +21,7 @@ Template.conversations.onRendered(function() {
 
 Template.chat.created = function () {
   currentUser = Meteor.user();
-  friendUser = Router.current().params.userId;
+  friendUserId = Router.current().params.userId;
 };
 
 Template.chat.rendered = function () {
@@ -64,8 +64,10 @@ Template.chat.helpers({
   getMessages: function (a, b) {
     var usersArr = [];
     currentUser && usersArr.push(currentUser._id);
-    friendUser && usersArr.push(friendUser._id);
-    return Messages.find({userId: {$in: usersArr}});
+    friendUserId && usersArr.push(friendUserId);
+    debugger;
+    var messages = Messages.find({userId: {$in: usersArr}, toUserId: {$in: usersArr}});
+    return messages;
   }
 });
 
@@ -88,7 +90,7 @@ Template.chatMessage.helpers({
 function sendMessage(messageText, view){
   Messages.insert({
     userId: currentUser._id,
-    toUserId: friendUser._id,
+    toUserId: friendUserId,
     text: messageText,
     timestamp: new Date(),
     keyMessage: 'own-message'
