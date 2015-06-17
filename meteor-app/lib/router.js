@@ -10,7 +10,7 @@ Router.configure({
 
   // wait on the following subscriptions before rendering the page to ensure
   // the global data it's expecting is present
-  waitOn: function() {
+  waitOn: function () {
     return [
       Meteor.subscribe('users'),
       Meteor.subscribe('messages'),
@@ -31,104 +31,107 @@ if (Meteor.isClient) {
   //Router.onBeforeAction('dataNotFound', {except: ['join', 'signin']});
 }
 
-Router.map(function() {
+Router.map(function () {
   this.route('join');
   this.route('signin');
-  this.route('home', {
-      path: '/'
-});
+  this.route('/', {
+    path: '/',
+    template: 'root',
+    layoutTemplate: 'appTemp'
+  });
+  this.route('home');
 
-    this.route('dialog');  // testing only
+  this.route('dialog');  // testing only
 
-    this.route('m/home', {
-        layoutTemplate: 'appBodyMobile',
-        template: 'homeMobile'
-    });
+  this.route('m/home', {
+    layoutTemplate: 'appBodyMobile',
+    template: 'homeMobile'
+  });
 
-    this.route('m/contacts', {
-        layoutTemplate: 'appBodyMobile',
-        template: 'contactsMobile'
-    });
+  this.route('m/contacts', {
+    layoutTemplate: 'appBodyMobile',
+    template: 'contactsMobile'
+  });
 
-    this.route('m/conversations', {
-        layoutTemplate: 'appBodyMobile',
-        template: 'conversationsMobile'
-    });
+  this.route('m/conversations', {
+    layoutTemplate: 'appBodyMobile',
+    template: 'conversationsMobile'
+  });
 
 });
 
 
 /*
-* Routing hooks
-* Проверка залогинен пользователь или нет, если true, чтобы не было задержек в передачи данных между клиентом и сервером
-* проверяем верный логин или нет, пока ждем ответа, показываем шаблон загрузки
-* */
+ * Routing hooks
+ * Проверка залогинен пользователь или нет, если true, чтобы не было задержек в передачи данных между клиентом и сервером
+ * проверяем верный логин или нет, пока ждем ответа, показываем шаблон загрузки
+ * */
 
 Router.route('/contacts', {
-    name: 'contacts',
-    controller: 'requireLoginController'
+  name: 'contacts',
+  controller: 'requireLoginController'
 });
 
 Router.route('/conversations', {
-    name: 'conversations',
-    controller: 'requireLoginController'
+  name: 'conversations',
+  controller: 'requireLoginController'
 });
 
 Router.route('/chat', {
-    name: 'chat',
-    controller: 'requireLoginController'
+  name: 'chat',
+  controller: 'requireLoginController'
 });
 
 Router.route('chatUser', {
-    path: 'chat/:userId',
-    template: 'chat',
-    controller: 'requireLoginController'
+  path: 'chat/:userId',
+  template: 'chat',
+  controller: 'requireLoginController'
 });
 
-Router.route('/profile/',{
+Router.route('/profile/', {
     name: 'profile',
     controller: 'requireLoginController'
-},
-    function () {
+  },
+  function () {
     var id = Meteor.userId();
-    if(id) {
-        Router.go('/profile/' + id);
+    if (id) {
+      Router.go('/profile/' + id);
     } else {
 
     }
     //this.render('Items');
-});
+  });
 
 Router.route('profile_id', {
-    template: 'profile',
-    path:'/profile/:_id',
-    controller: 'requireLoginController',
-    data: function() {
-        return Meteor.users.findOne({_id: this.params._id});
-    }
+  template: 'profile',
+  path: '/profile/:_id',
+  controller: 'requireLoginController',
+  data: function () {
+    return Meteor.users.findOne({_id: this.params._id});
+  }
 });
 
 Router.route('editProfile', {
-    path: '/profile/:_id/edit',
-    controller: 'requireLoginController',
-    data: function() {
-        return Meteor.users.findOne({_id: this.params._id});
-    }
+  path: '/profile/:_id/edit',
+  controller: 'requireLoginController',
+  data: function () {
+    return Meteor.users.findOne({_id: this.params._id});
+  }
 });
 
 requireLoginController = RouteController.extend({
 
-    onBeforeAction: function() {
-        if( ! Meteor.user() ) {
-            if(Meteor.loggingIn()) {
-                this.render(this.loadingTemplate);
-            } else {
-                Router.go('entrySignIn');
-            }
-        } else {
-            this.next();
-        }
+  onBeforeAction: function () {
+    if (!Meteor.user()) {
+      if (Meteor.loggingIn()) {
+        this.render(this.loadingTemplate);
+      } else {
+        Router.go('entrySignIn');
+      }
+    } else {
+      this.next();
     }
+  }
 });
 
 
