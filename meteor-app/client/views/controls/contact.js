@@ -2,9 +2,9 @@
 Template.contact.onCreated(function(){
   var data = {
       avatarPath : '/content/avatars/39.jpg'
-  }
+  };
   _.extend(this.data,  data);
-})
+});
 Template.contact.onRendered(function() {
 
 });
@@ -22,7 +22,11 @@ Template.contact.helpers({
     },
     'lastMessage': function() {
         var message = Messages.findOne({userId: this._id},{sort: {timestamp: -1}});
-        return message.text;
+        if(message === undefined) {
+            return '';
+        } else {
+            return message.text;
+        }
     }
 });
 

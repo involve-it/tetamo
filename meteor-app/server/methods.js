@@ -13,4 +13,5 @@ Meteor.methods({
     EmailsCollection.insert(emailOptions);
     Email.send(emailOptions);
   }
-})
+});
+
