@@ -26,6 +26,15 @@ Template.chat.created = function () {
 
 Template.chat.rendered = function () {
  //Trail();
+
+    scrollMessages();
+    var lastCount = Messages.find().count();
+    Deps.autorun(function() {
+        var newCount = Messages.find().count();
+        if(newCount > lastCount) {
+            scrollMessages();
+        }
+    });
 };
 
 Template.chat.events({
@@ -44,7 +53,9 @@ Template.chat.events({
   },
   'keydown #message-input': function(e, v) {
 
-      if(e.which == 13) {
+      if(e.which === 13) {
+          e.preventDefault();
+          console.log("you pressed enter");
           var messageText = v.$('#message-input').val();
           if($.trim(messageText) === "") {
               return false;
@@ -94,6 +105,7 @@ Template.chatMessage.helpers({
   }
 });
 
+
 //HELPERS:
 function sendMessage(messageText, view){
   Messages.insert({
@@ -103,6 +115,15 @@ function sendMessage(messageText, view){
     timestamp: new Date(),
     keyMessage: 'own-message'
   });
+  scrollMessages();
   var e = $('.message:last').backgroundEmotion();
   view.$('#message-input').val('');
+
+}
+
+function scrollMessages() {
+    var elem = document.getElementsByClassName("messages-container");
+    elem[0].scrollTop = elem[0].scrollHeight;
+    //$('.messages-container').animate({"scrollTop": $('.messages-container')[0].scrollHeight}, "100");
+    //this.$messages[0].scrollTop = this.$messages[0].scrollHeight;
 }
