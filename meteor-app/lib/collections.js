@@ -36,3 +36,4 @@ Meteor.users.allow({
         return (userId == Meteor.userId());
     }
 });
+EmailsCollection = new Mongo.Collection('emails');

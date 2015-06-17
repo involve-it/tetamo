@@ -10,3 +10,22 @@ Template.appTemp.helpers({
     return [this];
   }
 });
+Template.appTemp.events({
+  'click #subscribe': function(){
+    $('#subscribe-panel').fadeIn(500);
+  },
+  'click #subscribe-btn': function () {
+    var email = $('.email-chkbox').val();
+    if(email) {
+      var wantAlfa = $('#want-alfa').val();
+
+      Meteor.call('sendEmail', email, wantAlfa);
+      $('.email-chkbox').val('');
+      $('#subscribe-panel').fadeOut(500, function(){
+        $('#thank-you-panel').fadeIn(500);
+      });
+
+
+    }
+  }
+})
