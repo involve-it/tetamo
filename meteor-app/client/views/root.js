@@ -17,7 +17,7 @@ Template.appTemp.events({
   'click #subscribe-btn': function () {
     var email = $('.email-chkbox').val();
     if(email) {
-      var wantAlfa = $('#want-alfa').val();
+      var wantAlfa = $('#want-alfa')[0].checked;
 
       Meteor.call('sendEmail', email, wantAlfa);
       $('.email-chkbox').val('');
