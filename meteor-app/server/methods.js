@@ -3,7 +3,6 @@
  */
 Meteor.methods({
   sendEmail: function(email, wantAlfa){
-    debugger;
     emailOptions = {
       from: 'info@fantasia.chat',
       to: 'arutune@gmail.com',

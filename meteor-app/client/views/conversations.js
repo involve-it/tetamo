@@ -25,7 +25,7 @@ Template.conversations.created = function () {
 };
 
 Template.conversations.rendered = function () {
-  //Trail();
+  Trail();
 };
 
 Template.conversations.events({

@@ -25,7 +25,7 @@ Template.chat.created = function () {
 };
 
 Template.chat.rendered = function () {
- //Trail();
+ Trail();
 
     scrollMessages();
     var lastCount = Messages.find().count();

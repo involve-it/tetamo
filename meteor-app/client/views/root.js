@@ -13,6 +13,8 @@ Template.appTemp.helpers({
 Template.appTemp.events({
   'click #subscribe': function(){
     $('#subscribe-panel').fadeIn(500);
+    $('#thank-you-panel').fadeOut(500);
+
   },
   'click #subscribe-btn': function () {
     var email = $('.email-chkbox').val();
