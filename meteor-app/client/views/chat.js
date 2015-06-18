@@ -25,7 +25,8 @@ Template.chat.created = function () {
 };
 
 Template.chat.rendered = function () {
- Trail();
+//todo: Don't forget turn on:
+// Trail();
 
     scrollMessages();
     var lastCount = Messages.find().count();
@@ -86,9 +87,13 @@ Template.chat.helpers({
     return messages;
   },
     getFriendUserName: function() {
-        var friendUserName = Meteor.users.findOne({_id: friendUserId}).profile.name;
+        var friendUserName = Meteor.users.findOne({_id: friendUserId}).profile.name,
+            partEmail;
         if(friendUserName) {
             return friendUserName;
+        } else {
+            partEmail = Meteor.users.findOne({_id: friendUserId}).emails[0].address;
+            return partEmail.split('@')[0];
         }
 
     }

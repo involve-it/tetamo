@@ -4,5 +4,6 @@
 //https://codepen.io/montanaflynn/pen/orxwK
 Template.cloudsVisialization.rendered = function(){
   //debugger;
-  $('.sky').css('height', $('.content').css('height'));
+  //todo: Don't forget turn on:
+  //$('.sky').css('height', $('.content').css('height'));
 };
