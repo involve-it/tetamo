@@ -86,7 +86,11 @@ Template.chat.helpers({
     return messages;
   },
     getFriendUserName: function() {
-        return Meteor.users.findOne({_id: friendUserId}).profile.name;
+        var friendUserName = Meteor.users.findOne({_id: friendUserId}).profile.name;
+        if(friendUserName) {
+            return friendUserName;
+        }
+
     }
 });
 
@@ -104,7 +108,6 @@ Template.chatMessage.helpers({
   isOwnMessage: function () {
   }
 });
-
 
 //HELPERS:
 function sendMessage(messageText, view){
@@ -127,3 +130,10 @@ function scrollMessages() {
     //$('.messages-container').animate({"scrollTop": $('.messages-container')[0].scrollHeight}, "100");
     //this.$messages[0].scrollTop = this.$messages[0].scrollHeight;
 }
+
+
+
+Template.registerHelper("timestampToTime", function (timestamp) {
+    var date = new Date(timestamp);
+    return moment(date).fromNow();
+});

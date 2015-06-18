@@ -1,5 +1,5 @@
 <template name="chat">
-    <div class="page--conversations">
+    <div class="page--chat">
 
         <div class="top-bar nav-bar-block nav-bar-color">
             <div class="inner-content">
@@ -54,8 +54,12 @@
 <template name="chatMessage">
     <div class="conversations--message-wrapper">
         <div class="message {{ getMessageClass}}">
-            {{ text }}
+            <div class="box-message">
+                {{ text }}
+            </div>
+            <span class="timeStamp">{{timestampToTime timestamp}}</span>
         </div>
+
     </div>
 
 </template>
