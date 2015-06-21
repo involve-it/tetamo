@@ -5,5 +5,5 @@
 Template.cloudsVisialization.rendered = function(){
   //debugger;
   //todo: Don't forget turn on:
-  //$('.sky').css('height', $('.content').css('height'));
+  $('.sky').css('height', $('.content').css('height'));
 };

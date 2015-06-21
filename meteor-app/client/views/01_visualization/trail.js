@@ -9,7 +9,7 @@
  * http://twitter.com/hakimel
  */
 
-Trail = function() {
+Trail = function($element) {
   var SCREEN_WIDTH = $(document).width();
   var SCREEN_HEIGHT = $(document).height();
 
@@ -20,7 +20,7 @@ Trail = function() {
   var RADIUS_SCALE_MAX = 1.5;
 
 // The number of particles that are used to generate the trail
-  var QUANTITY = 25;
+  var QUANTITY = 5;
 
   var canvas;
   var context;
@@ -34,7 +34,7 @@ Trail = function() {
 
   function init() {
 
-    canvas = document.getElementById('world');
+    canvas = $element || document.getElementById('world');
 
     if (canvas && canvas.getContext) {
       context = canvas.getContext('2d');

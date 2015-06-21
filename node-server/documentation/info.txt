@@ -1,0 +1,10 @@
+1. Set up in WS:
+Add configuration: node server
+Wroking directory: /projects/EMOTIONS/tetamo/node-server/src
+Javascript file: main.js
+
+2. Run
+
+3. Access in browser: localhost:5555/
+Test function:
+localhost:5555/api/handlers

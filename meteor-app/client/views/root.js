@@ -1,6 +1,9 @@
 /**
  * Created by ashot on 5/14/15.
  */
+Template.conversations.rendered = function () {
+  Trail($('.content'));
+};
 Template.appTemp.helpers({
   // We use #each on an array of one item so that the "list" template is
   // removed and a new copy is added when changing lists, which is
