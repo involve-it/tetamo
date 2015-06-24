@@ -13,12 +13,17 @@
                     {{#if imagesUser}}
                         {{#each imagesUser}}
                             <div class="profile-avatar">
-                                <img src="{{this.url}}" alt="">
-                                <button value="remove" class="btnRemove">&times;</button>
+                                <div class="avatars">
+                                    <img src="{{this.url}}" alt="{{this.name}}">
+                                    <button value="remove" class="btnRemove">&times;</button>
+                                </div>
+
                             </div>
                         {{/each}}
-                    {{else}}
-                        <img src="/content/avatars/avatar-no.png" width="80" height="80" />
+                     {{else}}
+                        <div class="avatars">
+                            <img src="/content/avatars/avatar-no.png"/>
+                        </div>
                     {{/if}}
                         <div class="avatar-info">
                             <span>Your photo.</span> <br />

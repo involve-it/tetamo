@@ -8,7 +8,10 @@ Template.profile.helpers({
         return (Meteor.userId() === currentUserId);
     },
     images: function() {
-        return Images.find();
+        var result = Images.find({'metadata.flagged':'true'});
+        if(result.count() > 0) {
+            return result;
+        }
     },
     gender: function() {
         var sex = this.gender;

@@ -103,7 +103,10 @@ Template.editProfile.helpers({
         return this.emails[0].address
     },
     imagesUser: function() {
-        return Images.find(); //findOne()
+        var result = Images.find({'metadata.flagged':'true'});
+        if(result.count() > 0) {
+            return result;
+        }
     }
 });
 
@@ -114,8 +117,14 @@ Template.editProfile.events({
             var fileObj = new FS.File(file);
             fileObj.metadata = { owner: Meteor.userId() };
             Images.insert(fileObj);
+
+            var allImages = Images.find().fetch();
+            _.each(allImages, function(image) {
+                Images.update({_id: image._id}, {$set: {'metadata.flagged': 'false'}});
+            });
+
             Images.update({_id: fileObj._id}, {$set: {'metadata.flagged': 'true'}});
-            console.log(fileObj._id + ": " + fileObj.metadata.flagged);
+           // console.log(fileObj._id + ": " + fileObj);
         });
     },
     'click .btnRemove': function(event, temp) {
