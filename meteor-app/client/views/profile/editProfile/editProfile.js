@@ -101,12 +101,6 @@ Template.editProfile.helpers({
     },
     email: function() {
         return this.emails[0].address
-    },
-    imagesUser: function() {
-        var result = Images.find({'metadata.flagged':'true'});
-        if(result.count() > 0) {
-            return result;
-        }
     }
 });
 
@@ -132,4 +126,10 @@ Template.editProfile.events({
     }
 });
 
-
+/* is defined for the all templates */
+Template.registerHelper('imgAvatar', function() {
+    var result = Images.find({'metadata.flagged':'true'});
+    if(result.count() > 0) {
+        return result;
+    }
+});

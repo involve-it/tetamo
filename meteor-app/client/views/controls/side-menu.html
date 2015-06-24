@@ -7,8 +7,20 @@
                 <div class="menu-profile">
                     <!-- <div class="button-shutdown"><i class="fa fa-power-off"></i></div> -->
                     <div class="user-content">
+                        {{#if imgAvatar}}
+                            {{#each imgAvatar}}
+                                <div class="profile-avatar">
+                                    <div class="avatars">
+                                        <img src="{{this.url}}" alt="{{this.name}}" width="60" height="60">
+                                    </div>
 
-                            <img src="/content/avatars/avatar-no.png" width="60" height="60" title="User Avatar" alt=""/>
+                                </div>
+                            {{/each}}
+                        {{else}}
+                            <div class="avatars">
+                                <img src="/content/avatars/avatar-no.png" width="60" height="60"/>
+                            </div>
+                        {{/if}}
 
                         <div class="user-information">
                             <div class="user-fl-name"> {{> profileSignedInLinks}} </div>

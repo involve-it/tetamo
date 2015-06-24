@@ -7,12 +7,6 @@ Template.profile.helpers({
         var currentUserId = this._id;
         return (Meteor.userId() === currentUserId);
     },
-    images: function() {
-        var result = Images.find({'metadata.flagged':'true'});
-        if(result.count() > 0) {
-            return result;
-        }
-    },
     gender: function() {
         var sex = this.gender;
         if(sex) {
