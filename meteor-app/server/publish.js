@@ -33,3 +33,9 @@ Meteor.publish('emotions', function(){
 Meteor.publish('singleUser', function(userId) {
     return Meteor.users.find(userId);
 });
+
+
+//ProfileImages publish
+Meteor.publish('images', function() {
+    return Images.find({ 'metadata.owner': this.userId});
+});

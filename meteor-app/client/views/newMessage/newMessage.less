@@ -1,0 +1,83 @@
+/* Style new message page */
+.page--newMessage {
+    @to-header-bg-color:        #F0F9FD; /* Background color */
+    @color-label:               #999999; /* Color Label */
+    @font-family-header:        "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    @input-bg:                  rgba(255,255,255,.95);
+    @to-header-border-bottom:   1px solid rgba(230,239,244,.85);
+
+    .new-message-box {
+        position: relative;
+
+        &.has-header {
+            padding: 0 !important;
+        }
+
+        .to-header {
+            font-family: @font-family-header;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-flex-direction: row;
+            -moz-flex-flex-direction: row;
+            flex-direction: row;
+            -webkit-flex-wrap: nowrap;
+            flex-wrap: nowrap;
+
+            line-height: 44px;
+            height: 44px;
+            background-color: @to-header-bg-color;
+            border-bottom: @to-header-border-bottom;
+
+                .text-label {
+                    flex-grow: 0;
+                    -webkit-flex-grow: 0;
+                    color: @color-label;
+                    width: auto;
+                    padding: 0 10pt;
+
+                    label {
+                        font-weight: 300;
+                    }
+
+                }
+
+                .contact-input {
+                    flex-grow: 1;
+                    -webkit-flex-grow: 1;
+                    padding: 0 15pt 0 0;
+
+                    input {
+                        outline: none;
+                        width: 100%;
+                        height: 30px;
+                        border-radius: 2px;
+                        border: none;
+                        background-color: @input-bg;
+                    }
+
+                }
+
+                .add-contact {
+
+                    text-align: center;
+                    padding: 0 15pt 0 0;
+
+                    i {
+                        color: rgba(0,185,255,1);
+                        font-size: 16px;
+                    }
+
+                    i:hover {
+                        cursor: pointer;
+                        color: rgba(0,185,255,.5);
+                    }
+                }
+        }
+
+    }
+
+    .contact-list {}
+}

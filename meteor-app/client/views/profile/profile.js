@@ -7,13 +7,31 @@ Template.profile.helpers({
         var currentUserId = this._id;
         return (Meteor.userId() === currentUserId);
     },
-    profileName: function() {
-        return this.profile.name || 'Anonymous'
+    images: function() {
+        return Images.find();
     },
-    email: function() {
-        return this.emails[0].address
+    gender: function() {
+        var sex = this.gender;
+        if(sex) {
+            if(this.gender === 'Male'){
+                return 'fa fa-male';
+            } else {
+                return 'fa fa-female';
+            }
+        }
+
     },
-    userId: function() {
-        return this._id;
+    fullName: function() {
+        if(this.firstName && this.lastName) {
+            return this.firstName + " " + this.lastName;
+        } else {
+            return this.firstName || 'Anonymous'
+        }
+    },
+    feeling: function() {
+        var feel = this.feeling;
+        if(feel) {
+            return this.feeling;
+        }
     }
 });

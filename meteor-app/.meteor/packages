@@ -14,3 +14,9 @@ iron:router
 joshowens:accounts-entry
 email
 momentjs:moment
+aldeed:simple-schema
+aldeed:autoform
+aldeed:collection2
+yogiben:autoform-file
+cfs:standard-packages
+cfs:gridfs

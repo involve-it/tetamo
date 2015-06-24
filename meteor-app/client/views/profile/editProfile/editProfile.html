@@ -2,50 +2,58 @@
     <div class="page--editProfile">
         <div class="top-bar nav-bar-block nav-bar-color">
             <div class="inner-content">
-
+                <h1 class="title">Profile settings</h1>
             </div>
         </div>
 
         {{#if currentUser}}
 
-            <div class="owner-photo-wrap">
+            <div class="owner-photo-wrap has-header">
                 <div class="img-avatar">
+                    {{#if imagesUser}}
+                        {{#each imagesUser}}
+                            <div class="profile-avatar">
+                                <img src="{{this.url}}" alt="">
+                                <button value="remove" class="btnRemove">&times;</button>
+                            </div>
+                        {{/each}}
+                    {{else}}
+                        <img src="/content/avatars/avatar-no.png" width="80" height="80" />
+                    {{/if}}
+                        <div class="avatar-info">
+                            <span>Your photo.</span> <br />
+                            <span>Download Size<br />should not exceed 2 MB.</span>
+                        </div>
+                        <div class="fileUpload btn btn-primary">
+                            <span>Choose file</span>
+                            <input  name="files" type="file" id="files" class="upload" />
+                        </div>
 
+                    <!--***********************************************-->
+                    <!-- {{#autoForm schema=userSchema collection='Meteor.users' template='plain' doc=currentUser type='update' id='insertImage'}}
+                            {{> afQuickField name="profilePic"}}
+                    {{/autoForm}} -->
+                    <!--***********************************************-->
                 </div>
-            </div>
-            <br><br><br><br><br>
+
+                <div class="hr-line"></div>
 
 
-            <form class="editProfile-box has-header">
-                <div class="control-group">
-                    <label class="control-label" for="url">User name:</label>
-                    <div class="controls">
-                        <input name="profileName" type="text" value="{{profileName}}" />
-                    </div>
-                </div>
-                <br>
-                <div class="control-group">
-                    <label class="control-label" for="title">Email:</label>
-                    <div class="controls">
-                        <input name="email" type="text" value="{{email}}" />
-                    </div>
-                </div>
-                <br>
-                <div class="control-group">
-                    <div class="controls">
-                        <input type="submit" value="Save profile" class="btn btn-primary submit"/>
-                    </div>
-                </div>
-                <hr/>
-                <div class="control-group">
-                    <div class="controls">
-                        <a class="btn btn-danger delete" href="#">Delete account</a>
-                    </div>
-                </div>
-            </form>
 
+
+
+
+
+
+
+                <div class="editProfile-box has-header">
+                    {{#autoForm schema=userSchema collection='Meteor.users' template='plain' doc=currentUser type='update' id='editProfile'}}
+                        {{> afQuickField name='profile'}}
+                        <button type='submit' class="btn btn-default">Save profile</button>
+                    {{/autoForm}}
+                </div>
+             </div>
         {{/if}}
-
 
     </div>
 

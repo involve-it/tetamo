@@ -37,3 +37,20 @@ Meteor.users.allow({
     }
 });
 EmailsCollection = new Mongo.Collection('emails');
+
+//Image collectionFS
+Images = new FS.Collection("images", {
+    stores: [new FS.Store.GridFS("images", {})]
+});
+
+Images.allow({
+    insert: function(userId, doc) {
+        return !!userId;
+    },
+    update: function(userId, doc, fieldNames, modifier) {
+        return !!userId;
+    },
+    download: function(userId) {
+        return true;
+    }
+});
