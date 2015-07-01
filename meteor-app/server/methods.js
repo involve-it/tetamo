@@ -14,3 +14,22 @@ Meteor.methods({
   }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+Meteor.methods({
+    addToFriend: function(userId) {
+
+    },
+    usersUpdate: function(userId, imagesURL) {
+        Meteor.users.update(userId, {$set: imagesURL});
+    }
+});

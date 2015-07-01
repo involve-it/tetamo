@@ -91,9 +91,6 @@ Router.route('chatUser', {
 Router.route('/profile/', {
     name: 'profile',
     controller: 'requireLoginController',
-    waitOn: function() {
-        return [Meteor.subscribe('images')];
-    },
     data: function () {
         return Meteor.user();
     }
@@ -120,9 +117,6 @@ Router.route('profile_id', {
 Router.route('editProfile', {
   path: '/profile/:_id/edit',
   controller: 'requireLoginController',
-  waitOn: function() {
-      return [Meteor.subscribe('images')];
-  },
   data: function () {
     return Meteor.users.findOne({_id: this.params._id});
   }
@@ -145,7 +139,12 @@ requireLoginController = RouteController.extend({
     } else {
       this.next();
     }
-  }
+  },
+    waitOn: function() {
+  return [
+    Meteor.subscribe('images')
+  ];
+}
 });
 
 

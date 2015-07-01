@@ -110,7 +110,19 @@ Template.editProfile.events({
         FS.Utility.eachFile(event, function(file) {
             var fileObj = new FS.File(file);
             fileObj.metadata = { owner: Meteor.userId() };
-            Images.insert(fileObj);
+            Images.insert(fileObj, function(err, secc) {
+                if(err) {
+                    //error
+                } else {
+                    var userId = Meteor.userId();
+                    console.log(secc.name());
+                    var imagesURL = {
+                        'profile.image': '/cfs/files/images/' + secc._id + '/' + secc.name()
+                    };
+
+                    Meteor.call('usersUpdate', userId, imagesURL);
+                }
+            });
 
             var allImages = Images.find().fetch();
             _.each(allImages, function(image) {
@@ -129,6 +141,7 @@ Template.editProfile.events({
 /* is defined for the all templates */
 Template.registerHelper('imgAvatar', function() {
     var result = Images.find({'metadata.flagged':'true'});
+    //console.log(result);
     if(result.count() > 0) {
         return result;
     }

@@ -20,3 +20,9 @@ aldeed:collection2
 yogiben:autoform-file
 cfs:standard-packages
 cfs:gridfs
+
+# before install on MAC OS brew install graphicsmagick
+cfs:graphicsmagick
+
+
+msavin:mongol

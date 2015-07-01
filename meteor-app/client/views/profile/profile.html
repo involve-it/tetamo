@@ -12,18 +12,11 @@
         <div class="profile-box has-header">
             <div class="profile-narrow">
                 <div class="owner-photo-wrap">
-                    <div class="img-avatar">
-                        {{#if imgAvatar}}
-                            {{#each imgAvatar}}
-                                <img alt="{{this.name}}" src="{{this.url}}" width="80" height="80" title="User Avatar">
-                            {{/each}}
-                        {{else}}
-                            <img src="/content/avatars/avatar-no.png" width="80" height="80" />
-                        {{/if}}
-                    </div>
-                    <div class="owner-photo_bubble-wrap">
-                        <div><a href="#">Change avatar</a></div>
-                    </div>
+                    {{> avatar}}
+                    <!-- <div class="owner-photo_bubble-wrap">
+                        <div><a href="#">Full size avatar</a></div>
+                    </div> -->
+
                 </div>
             </div>
             <div class="profile-wide">
@@ -34,8 +27,8 @@
 
 
                 <div class="buttons-info">
-                    <div class="one">Count s.m.</div>
-                    <div class="two">Count m.</div>
+                    <div class="one">_id профайла: <br /> {{getIdProfile}}</div>
+                    <div class="two">_id гостя: <br /> {{getIdGuestUser}}</div>
                     <div class="three">Friends</div>
                 </div>
 
@@ -50,11 +43,21 @@
                     </div>
                 </div>
                 <div class="buttons-fl-mes">
-                    <button class="b-follow">Follow</button>
+                    <button class="b-follow">Invite to Fantasia</button>
                     <button class="b-message">Message</button>
                 </div>
             </div>
 
         </div>
+    </div>
+</template>
+
+<template name="avatar">
+    <div class="img-avatar">
+        {{#if profile.image}}
+            <a data-imagelightbox="a" href="{{profile.image}}?store=images"><img src="{{profile.image}}?store=thumbs"></a>
+        {{else}}
+            <img src="/content/avatars/avatar-no.png" width="80" height="80" />
+        {{/if}}
     </div>
 </template>

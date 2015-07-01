@@ -38,9 +38,25 @@ Meteor.users.allow({
 });
 EmailsCollection = new Mongo.Collection('emails');
 
+
+var createThumb = function(fileObj, readStream, writeStream) {
+    // Transform the image into a 10x10px thumbnail
+    gm(readStream, fileObj.name()).resize('80', '80').stream().pipe(writeStream);
+};
+
 //Image collectionFS
 Images = new FS.Collection("images", {
-    stores: [new FS.Store.GridFS("images", {})]
+    filter: {
+        maxSize: 2097152, //in bytes
+        allow: {
+            contentTypes: ['image/*'],
+            extensions: ['png', 'jpg', 'jpeg', 'gif']
+        }
+    },
+    stores: [
+        new FS.Store.GridFS("thumbs", {transformWrite: createThumb}),
+        new FS.Store.GridFS("images", {})
+    ]
 });
 
 Images.allow({

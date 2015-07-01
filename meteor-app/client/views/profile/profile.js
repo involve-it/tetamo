@@ -5,7 +5,7 @@
 Template.profile.helpers({
     canEditProfile: function() {
         var currentUserId = this._id;
-        return (Meteor.userId() === currentUserId);
+        return currentUserId && (Meteor.userId() === currentUserId);
     },
     gender: function() {
         var sex = this.gender;
@@ -28,7 +28,39 @@ Template.profile.helpers({
     feeling: function() {
         var feel = this.feeling;
         if(feel) {
-            return this.feeling;
+            return feel && this.feeling;
         }
+    },
+    getIdProfile: function () {
+        //console.log('ID профайла пользователя ' + this._id);
+        return this._id;
+    },
+    getIdGuestUser: function() {
+        //console.log('ID гостя ' + Meteor.userId());
+        return Meteor.userId();
+    },
+    getImageProfile: function() {
+        var imageProfile = this.image;
+        return imageProfile && this.image;
     }
+});
+
+Template.profile.events({
+    'click .b-follow': function(event, tmpl) {
+        //зашедший на профайл
+        console.log('Event: ', event);
+        console.log('TMPL: ', tmpl);
+        //Meteor.call('addToFriend', this._id);
+    }
+});
+
+Template.avatar.events({
+    'click a[data-imagelightbox="a"]': function(event, tmpl) {
+        event.preventDefault();
+        console.log('click img');
+    }
+});
+
+Template.avatar.onRendered(function() {
+
 });

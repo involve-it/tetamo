@@ -5,7 +5,6 @@
   @text-color-label: #59636b;
   @text-color-label-span: #88858c;
 
-  
   //Button Edit
   a#editProfile {
     height: 25px;
@@ -86,6 +85,7 @@
           padding: 10px;
           margin: 0 15px;
           text-align: center;
+          color: #FFFFFF;
         }
       }
 
@@ -154,7 +154,7 @@
 
         }
         .b-follow {
-          background-color: rgba(0,0,0,.3);
+          background-color: rgba(80,210,194,.95);
           color: #ffffff;
           border-width: 1px;
         }
@@ -167,11 +167,28 @@
         }
       }
     }
-
   }
 
 
 
+}
 
+/* lightbox style */
 
+#imagelightbox-overlay {
+  background-color: rgba(0, 0, 0, .85);
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 9998;
+}
+
+#imagelightbox
+{
+  position: fixed;
+  z-index: 9999;
+  -ms-touch-action: none;
+  touch-action: none;
 }
