@@ -57,7 +57,7 @@ Template.profile.events({
 Template.avatar.events({
     'click a[data-imagelightbox="a"]': function(event, tmpl) {
         event.preventDefault();
-        console.log('click img');
+        //console.log('click avatar img');
     }
 });
 

@@ -115,7 +115,7 @@ Template.editProfile.events({
                     //error
                 } else {
                     var userId = Meteor.userId();
-                    console.log(secc.name());
+                    //console.log(secc.name());
                     var imagesURL = {
                         'profile.image': '/cfs/files/images/' + secc._id + '/' + secc.name()
                     };
@@ -135,6 +135,9 @@ Template.editProfile.events({
     },
     'click .btnRemove': function(event, temp) {
         this.remove();
+
+        var userId = Meteor.userId();
+        Meteor.call('deleteProfileImage', userId);
     }
 });
 

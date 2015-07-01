@@ -30,6 +30,14 @@ Meteor.methods({
 
     },
     usersUpdate: function(userId, imagesURL) {
+        check(userId, String);
+        check(imagesURL, Object);
+
         Meteor.users.update(userId, {$set: imagesURL});
+    },
+    deleteProfileImage: function(userId) {
+        check(userId, String);
+
+        Meteor.users.update(userId, {$set: {'profile.image': ''}});
     }
 });
