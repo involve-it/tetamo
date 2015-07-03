@@ -1,0 +1,35 @@
+<template name="conversationsMobile">
+    <div class="page--conversations">
+
+          <div class="messages-container">
+            {{#each getMessages}}
+                {{> conversationsMessage }}
+            {{/each}}
+        </div>
+        <div class="user-inputs-messages">
+
+            <div class="user-inputs">
+                <p style="display: none">Me:</p>
+                <input id="message-input" type="text" value="" placeholder="Your message" class="btn--input-message">
+                <input id="send-btn" type="button" value="send" class="btn--send">
+            </div>
+
+            <!-- Messages friend
+            <div class="user-inputs">
+                <p>Friend:</p>
+                <input id="message-input1" type="text" value="" placeholder="Your message" class="btn-input-message">
+                <input id="send-btn1" type="button" value="send" class="btn-send">
+            </div> -->
+        </div>
+    </div>
+</template>
+
+<template name="conversationsMessageMobile">
+    <div class="conversations--message-wrapper">
+
+        <div class="message {{ getMessageClass}}">
+            {{ text }}
+        </div>
+    </div>
+
+</template>

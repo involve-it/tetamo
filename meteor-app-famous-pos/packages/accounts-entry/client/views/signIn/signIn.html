@@ -1,0 +1,70 @@
+<template name='entrySignIn'>
+    <div class="page-wrapper--auth">
+        <div class="page auth">
+            <div class="content-scrollable">
+                <div class="wrapper-auth">
+                        <h1 class="title-auth">Fantasia</h1>
+                        <p class="subtitle-auth">emotional chat</p>
+                        {{#if logo}}
+                        <!--
+                        <div class="entry-logo">
+                            <a href="/"><img src="{{logo}}" alt="logo"></a>
+                        </div>
+                        -->
+                        {{/if}}
+                      <div class="">
+                          <div class="h3-title">
+                              <h3>&nbsp;</h3>
+                          </div>
+                        {{#if otherLoginServices}}
+                        <div class="entry-social">
+                          {{#each loginServices}}
+                            {{> entrySocial}}
+                          {{/each}}
+                          {{#if passwordLoginService}}
+                          <div class="email-option">
+                            <strong class="line-thru or-sign-in">{{t9n "OR"}}</strong>
+                          </div>
+                          {{/if}}
+                        </div>
+                        {{/if}}
+                        {{> entryError}}
+                        {{#unless otherLoginServices}}
+                          <div class="email-option">
+                            <!--<h3>{{t9n "signIn"}}</h3>-->
+                          </div>
+                        {{/unless}}
+                        {{#if passwordLoginService}}
+                          <form class="entry-form" id="signIn">
+                             <div class="form-group">
+                                 <div class="input-symbol">
+                                     <input autofocus type="phone" placeholder="Your Email" value='{{email}}' name="email" autocomplete="off">
+                                     <span title="Your phone" class="icon-phone"></span>
+                                 </div>
+                                 <div class="input-symbol">
+                                    <input type="password" placeholder="Password" value='{{password}}' name="password" autocomplete="off">
+                                    <span title="Password" class="icon-lock"></span>
+                                 </div>
+                             </div>
+
+                             {{#unless isUsernameOnly}}
+                                 <p><a href="{{pathFor 'entryForgotPassword'}}">{{t9n "forgotPassword"}}</a></p>
+                                 <button type="submit" class="submit btn btn-primary">{{t9n "signIn"}}</button>
+                             {{/unless}}
+
+                              {{#if showCreateAccountLink}}
+                                  <p class="entry-signup-cta">{{t9n "dontHaveAnAccount"}} <a class="link-auth-alt" href="{{pathFor 'entrySignUp'}}">{{t9n "signUp"}}</a></p>
+                              {{/if}}
+
+                          </form>
+                        {{/if}}
+
+                        {{#if talkingToServer}}
+                          {{> spinner}}
+                        {{/if}}
+                      </div>
+                </div>
+            </div>
+        </div>
+  </div>
+</template>

@@ -1,0 +1,80 @@
+
+<template name="contacts">
+    {{#famousContext id='mainCtx' class="page contacts"}}
+        {{#HeaderFooterLayout size="[undefined,undefined]" headerSize="93"}}
+
+            {{#View target="header" size="[undefined,undefined]"}}
+                {{#Surface  class=""  translate="[0,0,5]"}}
+                    <div class="top-bar nav-bar-block nav-bar-color">
+                        <div class="inner-content">
+                            <div class="nav-group left">
+                                <div id="menu">
+                                    <a role="button" href="#" class="btn btn-navbar-toggle"></a>
+                                </div>
+                            </div>
+
+                            <h1 class="title">Contacts</h1>
+
+                            <div class="nav-group right">
+                                <form role="search" method="post" action="#" class="search" id="search">
+                                    <input type="search" placeholder="search..." name="searchword" class="search-field" autocomplete="off">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {{/Surface}}
+
+                {{#Surface size="[undefined,49]" origin="[0,0]" align="[0,.46]"  translate="[0,0,5]" class=""}}
+                    <div class="new-message">
+                        <h2 class="title"><i class="icon-new-message"></i> <a href="{{pathFor 'newMessage'}}">New message</a></h2>
+                    </div>
+                {{/Surface}}
+            {{/View}}
+
+
+
+
+            {{#View target="content" size="[undefined,undefined]"}}
+
+
+                {{#Scrollview size="[undefined,undefined]"}}
+
+                        <div class="contacts-list">
+                            <div class="scroll-content">
+                                <div class="overflow-scroll">
+                        {{#if contacts}}
+                            {{#famousEach contacts}}
+                                {{#Surface size="[undefined,100]"}}
+                                    {{> contact }}
+                                {{/Surface}}
+                            {{/famousEach}}
+                        {{else}}
+                            {{> noContacts}}
+                        {{/if}}
+                                </div>
+                            </div>
+                        </div>
+
+                {{/Scrollview}}
+
+
+            {{/View}}
+
+            <!--{{#Surface target="footer"  translate="[0,0,5]"  class=""}}<div>footer</div>    {{/Surface}}-->
+
+        {{/HeaderFooterLayout}}
+    {{/famousContext}}
+</template>
+
+
+<!--
+<template name="source">
+    {{#if contacts}}
+        {{#each contacts}}
+            {{> contact }}
+        {{/each}}
+    {{else}}
+        {{> noContacts}}
+    {{/if}}
+</template>
+-->

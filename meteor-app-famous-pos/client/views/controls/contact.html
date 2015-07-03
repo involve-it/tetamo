@@ -1,0 +1,27 @@
+<template name="contact">
+
+        <div class="item">
+            <div class="control--contact">
+                <div class="avatar">
+                    <a href="{{ getUrlProfile }}">
+                        <img src="{{ avatarPath }}" width="100" height="100" title="" alt=""/>
+                    </a>
+                </div>
+
+
+                <div class="item-content">
+                    <a href="{{ getUrl }}">
+                    <div class="inner">
+                        <div class="user-emo">Anger</div>
+                        <span class="time-stamp">22:30</span>
+                        <div class="user-name-label"> {{ getUsername }}</div>
+                        <div class="user-status online">online</div>
+                        <p class="user-last-message">{{lastMessage text=text}}</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="line-context-emotions"></div>
+            </div>
+        </div>
+
+</template>

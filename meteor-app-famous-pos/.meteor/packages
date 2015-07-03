@@ -1,0 +1,32 @@
+# Meteor packages used by this project, one per line.
+#
+# 'meteor add' and 'meteor remove' will edit this file for you,
+# but you can also edit it by hand.
+
+meteor-platform
+insecure
+less
+accounts-password
+fortawesome:fontawesome
+softwarerero:accounts-t9n
+iron:router
+joshowens:accounts-entry
+email
+momentjs:moment
+aldeed:simple-schema
+aldeed:autoform
+aldeed:collection2
+yogiben:autoform-file
+cfs:standard-packages
+cfs:gridfs
+
+# before install on MAC OS brew install graphicsmagick
+cfs:graphicsmagick
+
+
+msavin:mongol
+
+
+#include FAMO.US
+mjn:famous
+gadicohen:famous-views

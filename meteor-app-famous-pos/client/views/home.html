@@ -1,0 +1,24 @@
+
+<template name="home">
+    {{#famousContext id='mainCtx'}}
+        {{#View size="[undefined,undefined]"}}
+            <!-- Surface: title,logo -->
+            {{#Surface size="[undefined,200]" origin="[0,0]"}}
+                <div class="fake-box">
+                    <h1 class="font-smoothing">WELCOME</h1>
+                    <h3>самый эмоциональный и потрясный чат</h3>
+                </div>
+            {{/Surface}}
+
+            <!-- Surface: buttons Sign in, Register ... -->
+            {{#Surface size="[undefined,100]" align="[.5,.8]" origin="[.5,.5]"}}
+                <div class="fake-box-below">
+                    <ul class="auth-links">
+                        {{> entryAccountButtons}}
+                    </ul>
+                </div>
+            {{/Surface}}
+
+        {{/View}}
+    {{/famousContext}}
+</template>

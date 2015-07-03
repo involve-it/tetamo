@@ -1,0 +1,57 @@
+<template name="root">
+
+
+    {{#famousContext id='mainCtx'}}
+        {{#View size="[undefined,undefined]"}}
+            <!-- Surface: title,logo -->
+            {{#Surface size="[undefined,200]" origin="[0,0]"}}
+                <div class="fake-box">
+                    <h1 class="font-smoothing">FANTASIA</h1>
+                    <h3>is coming soon</h3>
+                    <a href="/home">home</a>
+                </div>
+
+                <div id="subscribe-panel" style="display: none;" class="subscribe-panel">
+                    <br/>
+                    <input type="email" placeholder="your email" class="email-chkbox"/>
+
+                    <br/>
+                    <h6>I want to be Alfa user:</h6>
+                    <input id="want-alfa" type="checkbox" class="myinput large custom " checked="checked"/>
+                    <!--<input type="checkbox"/>-->
+                    <br/>
+                    <div class="subscribe-btn" id="subscribe-btn" type="button" value="subscribe">subscribe</div>
+                </div>
+                <div id="thank-you-panel" style="display: none;">
+                    <br/>
+                    <h6>Thank you, we will keep you posted!</h6>
+                </div>
+
+            {{/Surface}}
+
+
+            <!-- Surface: buttons Sign in, Register ... -->
+            {{#Surface size="[undefined,100]" align="[.5,.8]" origin="[.5,.5]"}}
+                <div class="fake-box-below">
+                    <h6 class="bottom-notice"><a id="subscribe">Subscribe</a> for updates.</h6>
+                </div>
+            {{/Surface}}
+
+
+
+        {{/View}}
+    {{/famousContext}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+</template>

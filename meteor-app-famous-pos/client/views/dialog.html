@@ -1,0 +1,35 @@
+<template name="dialog">
+    <div class="page--dialog">
+        <div class="messages-container">
+        {{#each getMessages}}
+            {{> dialogMessage }}
+        {{/each}}
+        </div>
+        <div class="user-inputs">
+           <p>
+               Me:
+           </p>
+        <input id="message-input" type="text" value="happy" class="btn--input-message">
+        <input id="send-btn" type="button" value="send" class="btn--send">
+        </div>
+
+        <div class="user-inputs">
+            <p>
+                Friend:
+            </p>
+        <input id="message-input1" type="text" value="sad" class="btn--input-message">
+        <input id="send-btn1" type="button" value="send" class="btn--send">
+        </div>
+
+    </div>
+</template>
+<template name="dialogMessage">
+    <div class="dialog--message-wrapper">
+
+
+        <div class="message {{ getMessageClass}}">
+            {{ text }}
+        </div>
+    </div>
+
+</template>

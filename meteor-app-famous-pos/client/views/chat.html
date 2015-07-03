@@ -1,0 +1,60 @@
+<template name="chat">
+    {{#famousContext id='mainCtx' class="page--chat"}}
+
+            <!-- Header -->
+                {{#Surface  size="[undefined, 44]" origin="[0,0]" align="[0,0]"  translate="[0,0,5]"}}
+                    <div class="top-bar nav-bar-block nav-bar-color">
+                        <div class="inner-content">
+
+                            <h1 class="title">{{getFriendUserName}}</h1>
+
+                            <div class="nav-group right">
+                                <form role="search" method="post" action="#" class="search" id="search">
+                                    <input type="search" placeholder="search..." name="searchword" class="search-field" autocomplete="off">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {{/Surface}}
+
+            <!-- Content -->
+           <!-- {{#View size="[undefined,undefined]"}} -->
+                    {{#Scrollview size="[undefined,undefined]"}}
+                           <!-- <canvas id="world" width="900" height="600" style="position: absolute; left: -120.5px; top: 159px;"></canvas>
+                            {{> cloudsVisialization }} -->
+                        {{#famousEach getMessages}}
+                                {{> chatMessage }}
+                        {{/famousEach}}
+                    {{/Scrollview}}
+            <!--{{/View}}-->
+
+            <!-- Footer -->
+            {{#Surface  size="[undefined,50]" origin="[0,1]" align="[0,1]" translate="[0,0,5]"  class=""}}
+                <div class="user-inputs-messages">
+                    <div class="user-inputs">
+                        <p style="display: none">Me:</p>
+                        <textarea class="btn--input-message" id="message-input" name="textMessage" data-autoresize rows="1"></textarea>
+
+                        <input id="send-btn" type="button" value="send" class="btn--send">
+                    </div>
+                </div>
+            {{/Surface}}
+
+
+    {{/famousContext}}
+</template>
+
+<template name="chatMessage">
+    {{#Surface  size="[undefined, true]"}}
+    <div class="messages-container">
+        <div class="conversations--message-wrapper">
+            <div class="message {{ getMessageClass}}">
+                <div class="box-message">
+                    {{ text }}
+                </div>
+                <span class="timeStamp">{{timestampToTime timestamp}}</span>
+            </div>
+        </div>
+    </div>
+    {{/Surface}}
+</template>

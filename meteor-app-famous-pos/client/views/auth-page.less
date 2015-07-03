@@ -1,0 +1,201 @@
+
+.font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.page-wrapper--auth {   // need this wrapper to isolate the styling, you can edit this.
+
+  a:hover,
+  a:focus {
+    text-decoration: none;
+    color: #777777;
+    outline: none;
+  }
+
+  .page.auth {
+    text-align: center;
+  }
+
+  .page.auth .wrapper-auth {
+    margin: 0 auto;
+    max-width: 480px;
+    width: 80%;
+  }
+
+  .page.auth .wrapper-auth {
+    padding-top: 4em;
+  }
+
+  .link-auth-alt {
+    margin: 10px 0;
+  }
+/*
+  .footer {
+    height: auto;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+  }
+
+  .footer p {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 0;
+    font-size: 13px;
+  }
+*/
+  .link-forgot-password {
+  }
+
+  .page.auth .wrapper-auth form .input-symbol {
+    width: 100%;
+  }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="phone"],
+  input[type="password"],
+  textarea {
+    border: none;
+    border-radius: 0;
+    box-sizing: border-box;
+    color: #999999;
+    font-size: 14px;
+    padding: 12px;
+    outline: none;
+  }
+
+  .input-symbol {
+    display: inline-block;
+    position: relative;
+  }
+
+  .input-symbol input {
+    width: 100%;
+    padding-left: 3em;
+    background: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  }
+
+  .page.auth .wrapper-auth form .btn-primary {
+    margin-left: 0;
+    margin-top: 30px;
+    margin-right: 0;
+    width: 100%;
+  }
+
+  [class^="btn-"][class*="primary"],
+  [class*=" btn-"][class*="primary"] {
+    color: #999999;
+    background: #DFE3E5;
+    border: none;
+  }
+
+  [class^="btn"], [class*=" btn"] {
+    border-radius: 0;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: 0.3em;
+    line-height: 20px !important;
+    padding: 14px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 200ms ease-in 0s;
+  }
+
+  .title-auth {
+    font-family: "Avenir Next";
+    font-weight: lighter;
+    text-transform: uppercase;
+    font-size: 64px;
+    color: #FF8CBC;
+  }
+
+  .subtitle-auth {
+    margin-top: -20px;
+    font-size: 18px;
+    font-weight: lighter;
+    color: #999999;
+    letter-spacing: 2px;
+  }
+
+  .form-group0 {
+    margin-top: 10%;
+  }
+}
+
+//Delete after deploy Alfa version
+.fake-box {
+  padding-top: 50px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  padding-left: 40px;
+  padding-right: 40px;
+
+  h1 {
+    font-weight: lighter;
+    font-family: "Avenir Next";
+    font-size: 5em;
+    color: #FF8CBC;
+    margin-bottom: 5px;
+    margin-top: 0;
+  }
+
+  h3 {
+    margin-top: 5px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: lighter;
+    font-size: 2em;
+    color: #999999;
+  }
+
+}
+
+.fake-box-below {
+  overflow: hidden;
+  margin: 30px;
+  .auth-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+
+      display: inline-block;
+      font-size: 16px;
+      margin: 0 10px;
+      padding: 10px 8px;
+      border-radius:2px;
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+    }
+
+    li:first-child {
+      background-color: #4285f4;
+    }
+
+    li:last-child {
+      background-color: #db4437;
+    }
+
+    li:hover:first-child {
+      background-color: #3262ba;
+    }
+
+    li:hover:last-child {
+      background-color: #fb4c2f;
+    }
+
+  }
+}
