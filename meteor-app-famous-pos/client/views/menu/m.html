@@ -1,0 +1,87 @@
+<template name="menu">
+    {{#SequentialLayout id="menu" size="[300,undefined]" translate="[0,40]"}}
+
+        {{#View size="[undefined,undefined]"}}
+            {{#Modifier size="[300,undefined]"}}
+                {{#Scrollview size="[undefined,undefined]" }}
+        {{!-- Background and text --}}
+
+
+
+                    {{#Surface  size="[undefined, 85]" origin="[0,0]" align="[0,0]"}}
+                        <div class="menu-profile1">
+                            <div class="user-content1">
+                                {{#if imgAvatar}}
+                                    {{#each imgAvatar}}
+                                        <div class="profile-avatar">
+                                            <div class="avatars">
+                                                <img src="{{this.url}}" alt="{{this.name}}" width="60" height="60">
+                                            </div>
+
+                                        </div>
+                                    {{/each}}
+                                {{else}}
+                                    <div class="avatars1">
+                                        <img src="/content/avatars/avatar-no.png" width="60" height="60"/>
+                                    </div>
+                                {{/if}}
+
+                                <div class="user-information1">
+                                    <div class="user-fl-name"> {{> profileSignedInLinks}} </div>
+                                    <div class="user-location"><i class="fa fa-map-marker"></i> New York, USA</div>
+                                </div>
+                            </div>
+                        </div>
+                    {{/Surface}}
+
+                    {{#Surface  size="[undefined, 100]"}}
+                        <div class="nav-search1">
+                            <form id="nav-form-search" class="form-search" action="#" method="post" role="search">
+                                <input type="search" autocomplete="off" class="nav-search-field" name="searchword" placeholder="search...">
+                            </form>
+                        </div>
+                    {{/Surface}}
+
+                    {{#View size="[undefined,undefined]"}}
+                        {{#Surface  size="[undefined, 280]"}}
+                            <div class="icon-list1">
+
+                                <a href="/home"><i class="fa fa-home"></i> <span>Home</span></a>
+
+                                {{#if currentUser}}
+                                    <a href="/contacts"><span>Contacts</span></a>
+                                    <a href="/conversations"><span>Conversations</span></a>
+                                    {{> profileSignedOutLinks}}
+                                {{/if}}
+
+                            </div>
+                        {{/Surface}}
+                    {{/View}}
+
+
+
+            {{/Scrollview}}
+            {{/Modifier}}
+        {{/View}}
+    {{/SequentialLayout}}
+</template>
+
+
+<template name="main">
+
+    <div class="fake-box">
+        <h1>WELCOME</h1>
+        <h3>самый эмоциональный и потрясный чат</h3>
+    </div>
+
+    <div class="fake-box-below">
+        <ul class="auth-links">
+            {{> entryAccountButtons}}
+        </ul>
+    </div>
+</template>
+
+
+<template name="buttonMenu">
+    <button class="menu-button" id="buga">Click</button>
+</template>
