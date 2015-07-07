@@ -33,4 +33,5 @@ Template.appTemp.events({
 
     }
   }
-})
+});
+

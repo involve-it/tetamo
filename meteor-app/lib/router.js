@@ -39,7 +39,7 @@ Router.map(function () {
     template: 'root',
     layoutTemplate: 'appTemp'
   });
-  this.route('home');
+  this.route('home', {path:'/home', template: 'home'});
 
   this.route('dialog');  // testing only
 

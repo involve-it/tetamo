@@ -9,7 +9,7 @@ Meteor.startup(function () {
         termsUrl: '/terms-of-use',         // if set adds link to terms  'you agree to ...' on sign-up page
         homeRoute: 'entrySignIn',                    // mandatory - path to redirect to after sign-out
         dashboardRoute: '/',      // mandatory - path to redirect to after successful sign-in
-        profileRoute: 'profile',
+        profileRoute: 'profile/',
         //passwordSignupFields: 'EMAIL_ONLY',
         passwordSignupFields: 'EMAIL_ONLY',
         showSignupCode: false,

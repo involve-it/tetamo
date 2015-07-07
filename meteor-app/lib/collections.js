@@ -41,7 +41,7 @@ EmailsCollection = new Mongo.Collection('emails');
 
 var createThumb = function(fileObj, readStream, writeStream) {
     // Transform the image into a 10x10px thumbnail
-    gm(readStream, fileObj.name()).resize('80', '80').stream().pipe(writeStream);
+    gm(readStream, fileObj.name()).resize('60', '60').stream().pipe(writeStream);
 };
 
 //Image collectionFS

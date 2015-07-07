@@ -149,3 +149,9 @@ Template.registerHelper('imgAvatar', function() {
         return result;
     }
 });
+
+Template.registerHelper('choicePath', function() {
+    if(Router.current().route.path(this) === '/profile/'+ this._id + '/edit') {
+        return '/profile';
+    }
+});

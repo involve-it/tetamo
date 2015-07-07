@@ -8,55 +8,50 @@
 
         {{#if currentUser}}
 
-            <div class="owner-photo-wrap has-header">
-                <div class="img-avatar">
-                    {{#if imgAvatar}}
-                        {{#each imgAvatar}}
-                            <div class="profile-avatar">
-                                <div class="avatars">
-                                   <img src="{{this.url store='thumbs' uploading='/img/loading.gif'}}" alt="{{this.name}}">
-                                    <button value="remove" class="btnRemove">&times;</button>
+            <div class="owner-photo-wrap has-header padding">
+                <div class="card">
+                    <div class="img-avatar">
+                        {{#if imgAvatar}}
+                            {{#each imgAvatar}}
+                                <div class="profile-avatar">
+                                    <div class="avatars">
+                                       <img src="{{this.url store='thumbs' uploading='/img/loading.gif'}}" alt="{{this.name}}">
+                                        <button value="remove" class="btnRemove">&times;</button>
+                                    </div>
+
                                 </div>
-
+                            {{/each}}
+                         {{else}}
+                            <div class="avatars">
+                                <img src="/content/avatars/avatar-no.png"/>
                             </div>
-                        {{/each}}
-                     {{else}}
-                        <div class="avatars">
-                            <img src="/content/avatars/avatar-no.png"/>
-                        </div>
-                    {{/if}}
-                        <div class="avatar-info">
-                            <span>Your photo.</span> <br />
-                            <span>Download Size<br />should not exceed 2 MB.</span>
-                        </div>
-                        <div class="fileUpload btn btn-primary">
-                            <span>Choose file</span>
-                            <input  name="files" type="file" id="files" class="upload" />
-                        </div>
+                        {{/if}}
+                            <div class="avatar-info">
+                                <span>Your photo.</span> <br />
+                                <span>Download Size<br />should not exceed 2 MB.</span>
+                            </div>
+                            <div class="fileUpload btn btn-primary">
+                                <span>Choose file</span>
+                                <input  name="files" type="file" id="files" class="upload" />
+                            </div>
 
-                    <!--***********************************************-->
-                    <!-- {{#autoForm schema=userSchema collection='Meteor.users' template='plain' doc=currentUser type='update' id='insertImage'}}
-                            {{> afQuickField name="profilePic"}}
-                    {{/autoForm}} -->
-                    <!--***********************************************-->
+                        <!--***********************************************-->
+                        <!-- {{#autoForm schema=userSchema collection='Meteor.users' template='plain' doc=currentUser type='update' id='insertImage'}}
+                                {{> afQuickField name="profilePic"}}
+                        {{/autoForm}} -->
+                        <!--***********************************************-->
+                    </div>
+
+                    <div class="editProfile-box">
+                        {{#autoForm schema=userSchema collection='Meteor.users' template='plain' doc=currentUser type='update' id='editProfile'}}
+                            {{> afQuickField name='profile'}}
+                            <button type='submit' class="btn btn-default">Save profile</button>
+                        {{/autoForm}}
+                    </div>
+
                 </div>
 
-                <div class="hr-line"></div>
 
-
-
-
-
-
-
-
-
-                <div class="editProfile-box has-header">
-                    {{#autoForm schema=userSchema collection='Meteor.users' template='plain' doc=currentUser type='update' id='editProfile'}}
-                        {{> afQuickField name='profile'}}
-                        <button type='submit' class="btn btn-default">Save profile</button>
-                    {{/autoForm}}
-                </div>
              </div>
         {{/if}}
 

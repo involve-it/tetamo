@@ -5,49 +5,52 @@
                 <a id="editProfile" href="{{pathFor 'editProfile'}}">Edit</a>
             {{/if}}
             <div class="inner-content">
-
+                <h1 class="title">Profile</h1>
             </div>
         </div>
 
-        <div class="profile-box has-header">
-            <div class="profile-narrow">
-                <div class="owner-photo-wrap">
-                    {{> avatar}}
-                    <!-- <div class="owner-photo_bubble-wrap">
-                        <div><a href="#">Full size avatar</a></div>
-                    </div> -->
+        <div class="profile-box has-header padding">
+            <div class="card">
+                <div class="profile-narrow">
+                    <div class="owner-photo-wrap">
+                        {{> avatar}}
+                        <!-- <div class="owner-photo_bubble-wrap">
+                            <div><a href="#">Full size avatar</a></div>
+                        </div> -->
 
-                </div>
-            </div>
-            <div class="profile-wide">
-                {{#with profile}}
-                    <p class="user-name-label"><i class='{{gender}}'></i> {{fullName}}</p>
-                {{/with}}
+                        {{#with profile}}
+                            <p class="user-name-label"><i class='{{gender}}'></i> {{fullName}}</p>
+                        {{/with}}
 
-
-
-                <div class="buttons-info">
-                    <div class="one">_id профайла: <br /> {{getIdProfile}}</div>
-                    <div class="two">_id гостя: <br /> {{getIdGuestUser}}</div>
-                    <div class="three">Friends</div>
-                </div>
-
-            </div>
-
-            <div class="additional">
-                <div class="feeling">
-                    <div class="message">
-                    {{#with profile}}
-                        <span>{{#if feeling}} {{feeling}} {{else}} Another empty! {{/if}}</span>
-                    {{/with}}
                     </div>
                 </div>
-                <div class="buttons-fl-mes">
-                    <button class="b-follow">Invite to Fantasia</button>
-                    <button class="b-message">Message</button>
+                <div class="profile-wide">
+
+
+
+
+                    <div class="buttons-info">
+                        <div class="one"><strong>_id профайла:</strong> <br /> {{getIdProfile}}</div>
+                        <div class="two"><strong>_id гостя:</strong> <br /> {{getIdGuestUser}}</div>
+                        <div class="three"><strong>Friends:</strong> <br /></div>
+                    </div>
+
+                </div>
+
+                <div class="additional">
+                    <div class="feeling">
+                        <div class="message">
+                        {{#with profile}}
+                            <span>{{#if feeling}} {{feeling}} {{else}} Another empty! {{/if}}</span>
+                        {{/with}}
+                        </div>
+                    </div>
+                    <div class="buttons-fl-mes">
+                        <button class="b-follow">Invite to Fantasia</button>
+                        <button class="b-message">Message</button>
+                    </div>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -57,7 +60,7 @@
         {{#if profile.image}}
             <a data-imagelightbox="a" href="{{profile.image}}?store=images"><img src="{{profile.image}}?store=thumbs"></a>
         {{else}}
-            <img src="/content/avatars/avatar-no.png" width="80" height="80" />
+            <img src="/content/avatars/avatar-no.png" width="50" height="50" />
         {{/if}}
     </div>
 </template>
