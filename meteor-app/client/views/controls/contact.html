@@ -4,7 +4,7 @@
             <div class="control--contact">
                 <div class="avatar">
                     <a href="{{ getUrlProfile }}">
-                        <img src="{{ avatarPath }}" width="100" height="100" title="" alt=""/>
+                        {{> contactAvatar}}
                     </a>
                 </div>
 
@@ -24,4 +24,15 @@
             </div>
         </div>
 
+</template>
+
+
+<template name="contactAvatar">
+    <div class="img-avatar">
+        {{#if profile.image}}
+            <img src="{{profile.image}}?store=images" width="100" height="100" />
+        {{else}}
+            <img src="/content/avatars/avatar-no.png" width="100" height="100" />
+        {{/if}}
+    </div>
 </template>

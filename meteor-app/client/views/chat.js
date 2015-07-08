@@ -56,7 +56,7 @@ Template.chat.events({
 
       if(e.which === 13) {
           e.preventDefault();
-          console.log("you pressed enter");
+          //console.log("you pressed enter");
           var messageText = v.$('#message-input').val();
           if($.trim(messageText) === "") {
               return false;

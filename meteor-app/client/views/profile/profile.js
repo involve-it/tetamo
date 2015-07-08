@@ -36,7 +36,7 @@ Template.profile.helpers({
         return this._id;
     },
     getIdGuestUser: function() {
-        //console.log('ID гостя ' + Meteor.userId());
+        //console.log('ID гостя ( залогиненного ) ' + Meteor.userId());
         return Meteor.userId();
     },
     getImageProfile: function() {

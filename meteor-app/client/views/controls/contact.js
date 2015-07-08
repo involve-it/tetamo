@@ -21,7 +21,15 @@ Template.contact.helpers({
         return 'profile/' + this._id;
     },
     'lastMessage': function() {
-        var message = Messages.findOne({userId: this._id},{sort: {timestamp: -1}});
+        var messageArray = [];
+        messageArray.push(this._id);
+        messageArray.push(Meteor.userId());
+
+        var message = Messages.findOne({
+            userId:     {$in: messageArray},
+            toUserId:   {$in: messageArray}
+        },{sort: {timestamp: -1}});
+
         if(message === undefined) {
             return '';
         } else {
